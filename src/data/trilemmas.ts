@@ -1563,5 +1563,1029 @@ export const trilemmas: Trilemma[] = [
         }
       }
     ]
+  },
+  {
+    id: 'investment-trilemma',
+    name: {
+      zh: '投资不可能三角',
+      en: 'Investment Trilemma'
+    },
+    category: 'economics',
+    tagline: {
+      zh: '金融投资中最经典的风险收益流动性权衡',
+      en: 'The classic risk-return-liquidity trade-off in all investing'
+    },
+    introduction: {
+      zh: '在金融投资领域，任何资产都无法同时具备高收益性、高安全性和高流动性。这是所有投资决策的底层物理定律。投资者必须在三者中明确自己最想要的两个属性，并坦然地接受第三个维度的缺憾，不存在“完美投资品”。',
+      en: 'In financial investing, no asset can simultaneously offer high returns, high safety, and high liquidity. This is the fundamental law of all investment decisions. Every investor must choose two and accept the shortfall in the third—there is no "perfect investment".'
+    },
+    vertices: [
+      {
+        id: 'return',
+        name: {
+          zh: '高收益性',
+          en: 'High Return'
+        },
+        description: {
+          zh: '资产能够产生远超市场平均水平的年化回报率，实现资本的高速增值和财富的快速积累。',
+          en: 'The asset generates annualized returns well above the market average, enabling rapid capital growth and wealth accumulation.'
+        },
+        details: {
+          zh: '高收益是每一个投资者追逐的终极目标。它意味着复利效应的最大化——10% vs 3%的年化收益率在30年后的财富差距接近7倍。然而，追逐高收益必然意味着要进入高风险领域（股票、加密货币、风险投资、杠杆交易），或者投入极长期的锁定周期（私募股权、早期投资），也意味着放弃了随时变现的便利性。',
+          en: 'High returns are every investor\'s ultimate goal. A 10% vs 3% annualized return yields a nearly 7x wealth difference over 30 years. But chasing high returns inevitably means entering high-risk territory (stocks, crypto, venture capital, leveraged trading) or locking up capital for very long periods (private equity, early-stage investing).'
+        },
+        colorHue: 30 // Prosperity Gold
+      },
+      {
+        id: 'safety',
+        name: {
+          zh: '高安全性',
+          en: 'High Safety'
+        },
+        description: {
+          zh: '资产的本金损失风险极低，价值不会大幅波动，即使在极端市场环境或经济危机中也能保持稳定。',
+          en: 'Extremely low risk of principal loss, with stable value even during extreme market turmoil or economic crises.'
+        },
+        details: {
+          zh: '安全性是保守型投资者和风险厌恶者的核心诉求，也是养老资金、教育基金等不可承受损失之资金的首要考虑。保本意味着资产配置在国债、存款、货币基金、黄金等低波动品种上。但安全性是有代价的：这些资产的实际收益率（扣除通胀后）往往接近于零甚至为负。在长期的时间跨度下，过度的安全偏好实际上会因通胀侵蚀而损失真实购买力。',
+          en: 'Safety is the priority of conservative investors and risk-averse capital like retirement funds. Preservation means allocating to T-bills, deposits, money market funds, and gold. But safety comes at a cost: real returns (after inflation) are often near zero or negative. Over long time horizons, excessive risk aversion actually destroys purchasing power.'
+        },
+        colorHue: 170 // Secure Teal
+      },
+      {
+        id: 'liquidity',
+        name: {
+          zh: '高流动性',
+          en: 'High Liquidity'
+        },
+        description: {
+          zh: '资产能够在极短的时间内以接近市场公允价值的价格快速变现，交易成本低，不存在卖出障碍。',
+          en: 'The asset can be quickly converted to cash at close to fair market value with low transaction costs and no selling barriers.'
+        },
+        details: {
+          zh: '流动性决定了你在急需用钱时能否及时将资产转化为现金。高流动性资产（活期存款、货币基金、上市交易型 ETF）可以做到 T+0 或 T+1 即时到账，为投资者提供了极大的灵活性和应急保障。然而，流动性溢价意味着市场愿意为"随时可以跑路"的特权支付一个价格——流动性越好的资产，其长期预期收益率通常越低，因为它牺牲了收益来换取便利。',
+          en: 'Liquidity determines whether you can convert assets to cash when you urgently need it. Highly liquid assets (demand deposits, money market funds, listed ETFs) offer T+0 or T+1 settlement, providing maximum flexibility. However, the liquidity premium means the market charges for the privilege of "being able to exit anytime"—the more liquid an asset, the lower its expected long-term return.'
+        },
+        colorHue: 210 // Liquid Blue
+      }
+    ],
+    tradeOffs: [
+      {
+        selectedVertices: ['return', 'safety'],
+        sacrificedVertex: 'liquidity',
+        name: {
+          zh: '高收益 + 高安全（锁定换稳健回报）',
+          en: 'High Return + High Safety (Lock-up for Stable Gains)'
+        },
+        description: {
+          zh: '本金安全且回报丰厚，但资金被长期锁死，无法随时取出或转让。',
+          en: 'Principal is safe and returns are attractive, but capital is locked up long-term with no early exit.'
+        },
+        realWorldImpact: {
+          zh: '在锁定期内如果遇到更好的投资机会或个人急用钱，完全无法动用这笔资产。提前赎回通常面临巨额罚息或只能以大幅折价转让给第三方。',
+          en: 'During the lock-up period, if a better opportunity arises or an emergency hits, the capital is completely inaccessible. Early redemption often incurs massive penalties or requires fire-selling at a deep discount.'
+        },
+        example: {
+          zh: '银行大额存单（提前支取损失全部利息）、定期理财保险（前几年退保亏损本金）、私募股权基金（通常7-10年锁定期）。',
+          en: 'Bank certificates of deposit (early withdrawal forfeits all interest), insurance-linked savings products (surrender losses in early years), private equity funds (typical 7-10 year lock-up).'
+        }
+      },
+      {
+        selectedVertices: ['safety', 'liquidity'],
+        sacrificedVertex: 'return',
+        name: {
+          zh: '高安全 + 高流动（现金管理的低收益宿命）',
+          en: 'High Safety + High Liquidity (The Low-Return Fate of Cash Management)'
+        },
+        description: {
+          zh: '随存随取且本金绝对安全，但收益率极低，甚至跑不赢通货膨胀。',
+          en: 'Instant access with absolute principal safety, but yields are extremely low, often failing to beat inflation.'
+        },
+        realWorldImpact: {
+          zh: '投资者获得了极大的安全感和便利性，但长期持有这类资产的实际购买力在不断缩水。10年前100元能买的东西，现在可能需要120元。',
+          en: 'Investors enjoy maximum peace of mind and convenience, but long-term purchasing power steadily erodes. What cost ¥100 ten years ago now costs ¥120.'
+        },
+        example: {
+          zh: '银行活期存款（利率接近0%）、货币市场基金（余额宝等，收益率持续走低）、短期国债。',
+          en: 'Bank demand deposits (near-zero interest), money market funds (Yu\'e Bao etc., yields declining), short-term Treasury bills.'
+        }
+      },
+      {
+        selectedVertices: ['liquidity', 'return'],
+        sacrificedVertex: 'safety',
+        name: {
+          zh: '高流动 + 高收益（高风险博取高回报）',
+          en: 'High Liquidity + High Return (High Risk for High Reward)'
+        },
+        description: {
+          zh: '资金可以随时进出，且潜在回报诱人，但资产价格波动剧烈，本金遭受永久性损失的风险极大。',
+          en: 'Capital can enter and exit freely with attractive potential returns, but prices are extremely volatile with significant risk of permanent principal loss.'
+        },
+        realWorldImpact: {
+          zh: '投资者既要灵活又要高回报，市面上的选项只剩下了高波动性的交易品种。每天的涨跌幅可能在10%以上，需要极强的心理承受能力。在恐慌性抛售或踩踏事件中，流动性会瞬间枯竭，所谓的"随时退出"可能只是一句空话。',
+          en: 'Flexibility plus high returns leaves only high-volatility instruments. Daily swings of 10%+ demand extreme psychological resilience. During panic sell-offs or flash crashes, liquidity can evaporate instantly—the "exit anytime" promise becomes illusory.'
+        },
+        example: {
+          zh: '股票日内交易、加密货币（比特币/以太坊等）、杠杆ETF、商品期货、外汇保证金交易。',
+          en: 'Day trading stocks, cryptocurrencies (Bitcoin/Ethereum), leveraged ETFs, commodity futures, forex margin trading.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'munchhausen-trilemma',
+    name: {
+      zh: '明希豪森三难困境',
+      en: 'Münchhausen Trilemma'
+    },
+    category: 'life',
+    tagline: {
+      zh: '认识论与逻辑学的奠基性三难——一切证明的终极边界',
+      en: 'The foundational trilemma of epistemology—the ultimate boundary of all proof'
+    },
+    introduction: {
+      zh: '由德国哲学家汉斯·阿尔伯特（Hans Albert）提出，是对亚里斯多德以来西方哲学中"基础主义"的深刻批判。它指出：当你试图为任何一个命题提供终极证明时，你必然陷入以下三种困境之一：无穷倒退（因为需要无尽的理由）、循环论证（用命题自身证明自己），或者武断地终止论证（诉诸不可证明的公理）。我们的任何知识体系都建立在这三种不完美选择之上。',
+      en: 'Proposed by German philosopher Hans Albert, a deep critique of foundationalism in Western philosophy since Aristotle. It states that when trying to ultimately justify any proposition, you inevitably face one of three dead ends: infinite regress (endless chain of reasons), circular reasoning (self-referential proof), or dogmatic termination (appeal to an unprovable axiom). All human knowledge rests on these imperfect foundations.'
+    },
+    vertices: [
+      {
+        id: 'circularity',
+        name: {
+          zh: '循环论证',
+          en: 'Circular Reasoning'
+        },
+        description: {
+          zh: '用命题本身或者依赖该命题才能成立的推论来证明这个命题，形成一个自我封闭的论证闭环。',
+          en: 'Proving a proposition using itself or a claim that depends on it, creating a self-referential closed loop.'
+        },
+        details: {
+          zh: '循环论证在逻辑上是无效的，但在日常生活中无处不在。例如："圣经是神的话语，因为圣经上就是这么写的。" 在数学和逻辑学中，循环论证被视为最严重的逻辑谬误。但在系统内部，它有时表现为自洽的一致性——一个公理体系内的所有定理都可以互相推导而不产生矛盾。这正是欧几里得几何乃至整个数学体系赖以运转的方式——在公理框架内循环自洽，但不证明公理本身的真理性。',
+          en: 'Circular reasoning is logically invalid yet ubiquitous in daily life. Example: "The Bible is God\'s word because the Bible says so." In formal logic, it\'s considered a serious fallacy. Yet within axiomatic systems, circular self-consistency is how Euclidean geometry and all of mathematics operate—proving internal consistency without establishing external truth.'
+        },
+        colorHue: 250 // Deep Indigo / Circular
+      },
+      {
+        id: 'regress',
+        name: {
+          zh: '无穷倒退',
+          en: 'Infinite Regress'
+        },
+        description: {
+          zh: '每一个理由都需要另一个理由来支撑它，如此无限延伸，永远无法到达一个完全的终点。',
+          en: 'Every reason requires another reason to support it, extending infinitely without ever reaching a final foundation.'
+        },
+        details: {
+          zh: '无穷倒退是理性主义者的"完美主义陷阱"：如果你要求每一个陈述都必须被严格证明，那么为了证明A，你需要B；为了证明B，你需要C；如此下去，永不终止。在现实世界的任何论证中，没有人真正有能力无限地追问下去——最终要么被迫停止（变成公理），要么陷入循环。这个困境揭示了人类理性的边界：完全的、终极的证明是不可能的。',
+          en: 'Infinite regress is the perfectionist\'s trap: if every claim must be rigorously proven, then proving A requires B, B requires C, ad infinitum. In practice, no one can sustain infinite questioning—they must either stop (becoming dogma) or circle back. This reveals the boundary of reason: complete, ultimate proof is impossible.'
+        },
+        colorHue: 25 // Endless Sunset
+      },
+      {
+        id: 'dogma',
+        name: {
+          zh: '公理独断',
+          en: 'Axiomatic Dogma'
+        },
+        description: {
+          zh: '在某一个无法再被证明的前提上强行终止论证，将其设定为不证自明的"公理"或"直觉"。',
+          en: 'Arbitrarily terminating the argument at an unprovable premise, declaring it a self-evident "axiom" or "intuition."'
+        },
+        details: {
+          zh: '公理独断是所有知识体系实际上采取的策略。数学设定公理，科学设定不可再分的基本定律，法律设定宪法原则，道德设定先验良知。从实用主义的视角来看，这是唯一能让知识体系运转起来的方案。但它的危险在于：公理的选择往往是文化、权力、传统或个人信仰的结果。你认为是"不言自明"的东西，别人可能完全不接受。每一个时代自以为牢不可破的公理，都可能在未来被重塑。',
+          en: 'Axiomatic dogma is the strategy all knowledge systems actually adopt. Mathematics sets axioms, science sets fundamental laws, law sets constitutional principles, ethics sets innate conscience. Pragmatically, this is the only way to make knowledge work. But its danger: axiom choice is often a product of culture, power, tradition, or personal faith. What you consider "self-evident" may be entirely rejected by others.'
+        },
+        colorHue: 130 // Firmament Green
+      }
+    ],
+    tradeOffs: [
+      {
+        selectedVertices: ['circularity', 'regress'],
+        sacrificedVertex: 'dogma',
+        name: {
+          zh: '循环 + 倒退（彻底怀疑主义）',
+          en: 'Circular + Regress (Radical Skepticism)'
+        },
+        description: {
+          zh: '既不接受任意中止论证的公理，又不愿意陷入循环，因此只能沿着论证链条无限倒退下去，最终无法确立任何确定性知识。',
+          en: 'Refusing both dogmatic axioms and circular closure, the chain of reasoning extends infinitely, ultimately failing to establish any certain knowledge.'
+        },
+        realWorldImpact: {
+          zh: '这种态度在哲学上称为"彻底怀疑论"：它逻辑上无懈可击，但在现实生活中寸步难行。你无法证明外部世界真实存在，也无法证明因果律，但你仍然得吃饭睡觉。理论上的完美主义在实际生活中导向了瘫痪。',
+          en: 'This stance, philosophical radical skepticism, is logically impeccable but practically paralyzing. You cannot prove the external world exists or that causality holds—yet you must still eat and sleep. Theoretical perfectionism leads to practical paralysis.'
+        },
+        example: {
+          zh: '笛卡尔的"我思故我在"——为了寻找绝对确定的知识，笛卡尔运用普遍怀疑的方法（方法论的怀疑），将一切可怀疑的东西都推到极致，最后只剩下"我在怀疑"这一事实本身不可怀疑。',
+          en: 'Descartes\' "Cogito ergo sum"—seeking absolute certainty, Descartes employed radical methodological doubt, doubting everything possible until only "I am doubting" itself remained indubitable.'
+        }
+      },
+      {
+        selectedVertices: ['regress', 'dogma'],
+        sacrificedVertex: 'circularity',
+        name: {
+          zh: '倒退 + 独断（线性证明的幻觉）',
+          en: 'Regress + Dogma (The Illusion of Linear Proof)'
+        },
+        description: {
+          zh: '采用一条看似线性的推理链，最终锚定在一个不可证明的公理上——回避了循环，但无法解释公理本身的正当性。',
+          en: 'Adopting a seemingly linear chain of reasoning anchored in an unprovable axiom—avoiding circularity but failing to justify the axiom itself.'
+        },
+        realWorldImpact: {
+          zh: '这是自然科学和大多数日常推理的实际模式。科学研究建立在因果律、归纳法和可重复性等基本假设之上，这些假设本身无法被科学证明。人们往往误以为自己的立场是完全理性的，而不觉察到底层的公理前提只是选择性的信仰。',
+          en: 'This is the actual mode of natural science and everyday reasoning. Science rests on causality, induction, and reproducibility—assumptions science itself cannot prove. People often mistake their positions as purely rational, unaware their foundational axioms are chosen beliefs.'
+        },
+        example: {
+          zh: '牛顿力学的绝对时空观（在相对论出现之前被视为不证自明的公理）、科学实在论（相信外部世界独立于观察者存在）。',
+          en: 'Newton\'s absolute space-time (taken as self-evident before relativity), scientific realism (the world exists independent of observation).'
+        }
+      },
+      {
+        selectedVertices: ['dogma', 'circularity'],
+        sacrificedVertex: 'regress',
+        name: {
+          zh: '独断 + 循环（封闭的公理体系）',
+          en: 'Dogma + Circular (Closed Axiomatic Systems)'
+        },
+        description: {
+          zh: '设立一组不可证明的公理作为起点，在此之上通过逻辑推导构建整个知识体系。体系内部自洽，但无法向外证明自己的根基。',
+          en: 'Establishing a set of unprovable axioms as the starting point, then building an entire knowledge system through logical deduction. Internally consistent, but externally groundless.'
+        },
+        realWorldImpact: {
+          zh: '这是最优雅也最脆弱的知识结构。体系内部浑然一体、完美自洽、无懈可击。但只要有人拒绝接受你的初始公理，整个大厦就会瞬间倒塌。在信仰、意识形态和世界观层面，这种模式导致了牢不可破的"回音壁效应"——体系内部的人觉得完美自洽，体系外部的人觉得毫无道理。',
+          en: 'The most elegant yet fragile structure. Internally seamless, perfectly consistent, and airtight—but reject the initial axiom and the entire edifice collapses. In faith, ideology, and worldviews, this creates impenetrable "echo chambers"—internally flawless yet externally incomprehensible.'
+        },
+        example: {
+          zh: '欧几里得几何学（基于五条公理证明一切，但公理本身无法被证明）、宗教信仰体系、康德的先验哲学（人为自然立法）。',
+          en: 'Euclidean geometry (all theorems derived from five unprovable axioms), religious belief systems, Kant\'s transcendental philosophy (the mind imposes laws on nature).'
+        }
+      }
+    ]
+  },
+  {
+    id: 'ai-trilemma',
+    name: {
+      zh: 'AI 不可能三角',
+      en: 'AI Trilemma'
+    },
+    category: 'technology',
+    tagline: {
+      zh: '机器学习系统中准确性、公平性与隐私性的内在冲突',
+      en: 'The inherent conflict between accuracy, fairness, and privacy in machine learning'
+    },
+    introduction: {
+      zh: '在当代机器学习系统的设计与部署中，存在着一个广受讨论的三难困境：任何模型都无法同时在对所有群体保持高准确率、维持算法公平无偏见、以及保护训练数据隐私这三个维度上做到极致。这三个目标的优化方向天然相互拉扯，迫使工程师和决策者在它们之间做出艰难的取舍。',
+      en: 'In modern machine learning systems, there is a widely discussed trilemma: no model can simultaneously achieve peak accuracy across all groups, algorithmic fairness without bias, and rigorous training data privacy. Optimizing for any two inevitably undermines the third, forcing hard trade-offs.'
+    },
+    vertices: [
+      {
+        id: 'accuracy',
+        name: {
+          zh: '准确性',
+          en: 'Accuracy'
+        },
+        description: {
+          zh: '模型在预测、分类和生成任务上达到极高的性能指标，错误率低，对所有输入都能给出精确的响应。',
+          en: 'The model achieves top-tier performance on prediction, classification, and generation tasks with low error rates and precise responses.'
+        },
+        details: {
+          zh: '准确性是 AI 系统商业价值的直接体现。推荐系统准确意味着更高的点击率，医疗 AI 准确意味着更少的误诊，自动驾驶准确意味着更少的事故。追求极致准确需要大量高质量、细粒度的训练数据，包括敏感的个人信息（医疗记录、位置轨迹、消费习惯）。数据越丰富、颗粒度越细、特征维度越高，模型的准确率就越高。但这种对数据的贪婪获取直接侵犯了用户的隐私底线。',
+          en: 'Accuracy is the direct measure of AI commercial value. Better recommendations mean higher CTR, better medical AI means fewer misdiagnoses, better autonomous driving means fewer accidents. Peak accuracy demands massive, high-granularity training data including sensitive personal information—directly conflicting with privacy boundaries.'
+        },
+        colorHue: 200 // Performance Blue
+      },
+      {
+        id: 'fairness',
+        name: {
+          zh: '公平性',
+          en: 'Fairness'
+        },
+        description: {
+          zh: '模型的预测和决策不会对特定种族、性别、年龄、地域或其他受保护群体产生系统性歧视或偏差。',
+          en: 'The model\'s predictions and decisions do not systematically discriminate against groups based on race, gender, age, region, or other protected attributes.'
+        },
+        details: {
+          zh: '公平性要求算法在不同的群体之间实现"平等对待"——无论你是哪个族裔、性别或社会阶层，AI 给你的评分、信贷批准、招聘筛选或医疗诊断都不应存在结构性偏差。然而，消除偏差首先需要你识别到偏差的存在，这要求收集和标注敏感属性数据（如种族、性别），然后通过特殊的训练技术（如对抗去偏、重加权）来修正。但收集这些数据本身就构成了隐私风险，并且修正偏差往往以降低总体准确率为代价。',
+          en: 'Fairness demands "equal treatment" across groups—AI scoring, loan approvals, hiring filters, and diagnoses should not carry structural bias. But eliminating bias requires first detecting it, which means collecting sensitive attribute data (race, gender) and applying specialized debiasing techniques—creating privacy risks and often reducing overall accuracy.'
+        },
+        colorHue: 290 // Justice Violet
+      },
+      {
+        id: 'privacy',
+        name: {
+          zh: '隐私性',
+          en: 'Privacy'
+        },
+        description: {
+          zh: '训练模型所使用的个人数据受到严格保护，模型不会泄露、记忆或反向推断出任何个体的敏感信息。',
+          en: 'Personal data used to train the model is strictly protected; the model does not leak, memorize, or reverse-engineer any individual\'s sensitive information.'
+        },
+        details: {
+          zh: '隐私保护要求 AI 系统在训练和使用过程中对个人数据进行脱敏、匿名化或应用差分隐私技术。这些技术通过在训练过程中注入噪声来模糊个体数据的贡献度，使得攻击者无法从模型输出中反推出某个人是否在训练集中（成员推断攻击），或者具体数据是什么。但噪声的加入必然会降低模型的准确率。与此同时，公平性审计往往需要比对的群体统计信息，在高度隐私保护下无法获取这些统计数据，导致偏见无法被检测和修正。',
+          en: 'Privacy requires anonymization, differential privacy, or other sanitization techniques during training. These methods inject noise to obscure individual data contributions, preventing membership inference or data reconstruction attacks. However, noise degrades accuracy. Additionally, fairness audits require group-level statistics that privacy protection restricts, making bias undetectable and unfixable.'
+        },
+        colorHue: 140 // Secure Emerald
+      }
+    ],
+    tradeOffs: [
+      {
+        selectedVertices: ['accuracy', 'fairness'],
+        sacrificedVertex: 'privacy',
+        name: {
+          zh: '准确 + 公平（以隐私换公正）',
+          en: 'Accuracy + Fairness (Sacrificing Privacy for Justice)'
+        },
+        description: {
+          zh: '收集包括敏感属性在内的大规模精细化数据来训练和校验模型，确保在各个群体上的表现均衡且精确，但个人隐私暴露无遗。',
+          en: 'Collecting large-scale granular data including sensitive attributes to train and audit models for balanced accuracy across groups, leaving personal privacy exposed.'
+        },
+        realWorldImpact: {
+          zh: '模型在各个族裔和性别上的表现都得到了监控和修正，偏差被降到最低，预测准确率也很高。但用户的大量敏感信息被集中存储和分析，一旦发生数据泄露或内部滥用，后果不堪设想。',
+          en: 'The model is monitored and corrected across all demographic groups with minimal bias and high accuracy. But massive amounts of sensitive user data are centralized and analyzed—a single breach or insider abuse could be catastrophic.'
+        },
+        example: {
+          zh: '大型科技公司在招聘算法中对性别和族裔进行主动均衡——收集候选人的种族和性别信息（为此需要申请人主动提供），确保模型不歧视，但引发了极大的隐私争议和监管风险。',
+          en: 'Tech companies actively balancing hiring algorithms by gender and ethnicity—collecting race and gender data from applicants to ensure non-discrimination, triggering major privacy controversies and regulatory risks.'
+        }
+      },
+      {
+        selectedVertices: ['fairness', 'privacy'],
+        sacrificedVertex: 'accuracy',
+        name: {
+          zh: '公平 + 隐私（牺牲精度的谨慎方案）',
+          en: 'Fairness + Privacy (Cautious Approach at the Cost of Accuracy)'
+        },
+        description: {
+          zh: '严格保护用户数据隐私，同时对模型输出进行公平性约束，但过度的限制使模型的预测精度大幅下降。',
+          en: 'Strictly protecting user data privacy while applying fairness constraints, but these restrictions significantly degrade prediction accuracy.'
+        },
+        realWorldImpact: {
+          zh: '用户隐私得到了最大保障，算法偏见也得到了控制。但模型的准确率下降到影响实际可用性的程度——医疗 AI 漏诊率上升，推荐系统变得不准，用户的体验大打折扣。高精度场景下根本无法部署。',
+          en: 'Privacy is maximized and bias controlled. But accuracy degrades to the point of limiting practical utility—medical AI misses more diagnoses, recommendations become irrelevant, and the model is unusable in high-stakes scenarios.'
+        },
+        example: {
+          zh: '苹果的 on-device 机器学习方案：所有数据在用户设备本地处理，不上传云端训练，且通过差分隐私添加噪声。隐私保护极强，但模型性能显著低于 Google 或 Meta 的云端集中式训练模型。',
+          en: 'Apple\'s on-device ML approach: all data processed locally without cloud upload, with differential privacy noise added. Privacy is excellent, but model performance significantly lags behind Google or Meta\'s centralized training.'
+        }
+      },
+      {
+        selectedVertices: ['privacy', 'accuracy'],
+        sacrificedVertex: 'fairness',
+        name: {
+          zh: '隐私 + 准确（不透明的黑箱模型）',
+          en: 'Privacy + Accuracy (Opaque Black-Box Models)'
+        },
+        description: {
+          zh: '在高度保护数据隐私的前提下追求极致的模型准确率，但缺乏对模型决策过程的透明度，无法审计是否存在偏见。',
+          en: 'Maximizing model accuracy under strict privacy constraints, but lacking transparency into the decision process, making bias impossible to audit.'
+        },
+        realWorldImpact: {
+          zh: '模型性能卓越，用户也不担心数据泄露。但由于无法获取群体统计数据来校验公平性，模型可能在系统性地歧视某些群体而不被发现。这种"隐蔽的偏见"最为危险——它藏在看似客观的黑箱背后，长期积累的社会不公无法被揭露和纠正。',
+          en: 'Excellent performance with strong privacy. But without group-level statistics to audit fairness, the model may systematically discriminate against certain groups without detection. This "hidden bias" is most dangerous—lurking behind an objective-looking black box, perpetuating injustice undetected.'
+        },
+        example: {
+          zh: '金融信贷评分模型：使用大量隐私保护的消费和行为数据训练，不良贷款率很低，但监管机构无法确认该模型是否对特定区域或族裔的申请人进行了不公正的低分评定。',
+          en: 'Credit scoring models trained on privacy-protected behavioral data achieving low default rates, but regulators cannot verify whether the model unfairly penalizes applicants from specific regions or ethnic backgrounds.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'urban-planning',
+    name: {
+      zh: '城市规划不可能三角',
+      en: 'Urban Planning Trilemma'
+    },
+    category: 'politics',
+    tagline: {
+      zh: '城市发展中可负担性、可持续性与宜居性的永恒博弈',
+      en: 'The eternal struggle between affordability, sustainability, and livability in urban development'
+    },
+    introduction: {
+      zh: '在全球城市化进程中，城市规划者始终面临一个不可能三角：一座城市无法同时具备高可负担性（低廉的房价和租金）、高可持续性（低碳绿色环保）和高宜居性（宽敞的居住空间、完善的配套和低密度环境）。世界上的每一座城市，都是在这三个维度中做出痛苦取舍后的产物。',
+      en: 'In global urbanization, planners always face an impossible trilemma: a city cannot simultaneously offer high affordability (low housing costs), high sustainability (low-carbon green development), and high livability (spacious homes, ample amenities, low density). Every city in the world is the product of painful trade-offs among these three dimensions.'
+    },
+    vertices: [
+      {
+        id: 'affordability',
+        name: {
+          zh: '可负担性',
+          en: 'Affordability'
+        },
+        description: {
+          zh: '城市居民能够以合理的收入水平负担住房租金或购房支出，不被过高的居住成本挤出城市中心。',
+          en: 'Residents can afford housing rent or mortgage payments on reasonable incomes without being priced out of the city center.'
+        },
+        details: {
+          zh: '可负担性直接决定了城市对年轻人和中低收入群体的包容度。高房价不仅让年轻人望而却步，还会带来劳动力短缺、产业空心化和社会阶层固化。实现可负担性的最直接手段是大量建设高密度住宅（高层公寓楼、小户型），放宽土地供应管制，压缩居住面积来摊薄每户成本。但这往往意味着牺牲居住舒适度，且高密度的城市形态不利于绿色空间和生态足迹的控制。',
+          en: 'Affordability decides whether a city remains accessible to youth and middle-income workers. High housing costs drive talent away, hollow out industries, and cement social stratification. The most direct solution is high-density development (high-rises, micro-apartments) and relaxed land-use controls—trading living space for cost, at the expense of comfort and green space.'
+        },
+        colorHue: 40 // Housing Gold
+      },
+      {
+        id: 'sustainability',
+        name: {
+          zh: '可持续性',
+          en: 'Sustainability'
+        },
+        description: {
+          zh: '城市的开发建设和居民生活方式对自然环境的负面影响最小化，能源消耗低碳，生态足迹和碳排放控制在目标范围内。',
+          en: 'Urban development and lifestyles minimize environmental impact, with low-carbon energy consumption, controlled ecological footprints, and emissions within targets.'
+        },
+        details: {
+          zh: '可持续性是面对气候危机所有城市必须给出的答卷。它要求紧凑的城市形态（避免无序蔓延占用耕地和自然生态）、发达的公共交通（减少私家车依赖）、绿色建筑标准和清洁能源。研究表明，高密度紧凑型城市的人均碳排放远低于低密度郊区化城市。然而，为实现高标准绿色建筑和净化系统需要高昂的建设成本，最终会转嫁到房价和租金上，牺牲可负担性。而过度密集也不可避免地削弱了居住的宽敞度和私密性。',
+          en: 'Sustainability is every city\'s answer to the climate crisis. It demands compact urban form (preventing sprawl), robust public transit (reducing car dependency), green building standards, and clean energy. Studies show dense cities have far lower per-capita emissions. But achieving these green standards requires expensive construction, raising housing costs and sacrificing affordability.'
+        },
+        colorHue: 130 // Eco Green
+      },
+      {
+        id: 'livability',
+        name: {
+          zh: '宜居性',
+          en: 'Livability'
+        },
+        description: {
+          zh: '城市提供宽敞舒适的居住空间、充足的自然绿化、低人口密度、优质公共服务设施以及安静整洁的社区环境。',
+          en: 'The city offers spacious and comfortable homes, abundant green space, low population density, quality public services, and clean, quiet neighborhoods.'
+        },
+        details: {
+          zh: '宜居性是每个人对理想家园的核心想象：前庭后院、绿树成荫、学校步行可达、社区安全安静。这种"美国梦"式的低密度郊区模式确实提供了极致的生活品质，但它的代价是巨大的土地消耗、极高的私家车依赖和人均碳排放，与可持续性的目标背道而驰。同时，低密度开发意味着昂贵的土地成本和基础设施投入，使得房屋价格极为高昂，牺牲了可负担性。',
+          en: 'Livability is everyone\'s vision of an ideal home: front yards, tree-lined streets, walkable schools, safe quiet neighborhoods. This low-density suburban "American Dream" model offers exceptional quality of life at the cost of massive land consumption, car dependency, and carbon emissions—clashing with sustainability, while high land and infrastructure costs undermine affordability.'
+        },
+        colorHue: 30 // Comfort Amber
+      }
+    ],
+    tradeOffs: [
+      {
+        selectedVertices: ['affordability', 'sustainability'],
+        sacrificedVertex: 'livability',
+        name: {
+          zh: '可负担 + 可持续（高密度紧凑城市）',
+          en: 'Affordable + Sustainable (High-Density Compact City)'
+        },
+        description: {
+          zh: '通过高密度、小户型的开发模式实现大量平价住宅，同时依靠集约化城市形态降低碳排放，但牺牲了居住的宽敞度和私密性。',
+          en: 'Achieving affordable housing through high-density, small-unit development while reducing carbon via compact urban form, at the cost of living space and privacy.'
+        },
+        realWorldImpact: {
+          zh: '公共交通效率极高，人均碳排放极低，普通市民也能负担住房。但居住空间狭小（人均居住面积可能不到20平方米），邻里嘈杂，缺乏私人绿化和安静的个人空间——所谓的"鸟笼"式生活。',
+          en: 'Excellent public transit, low per-capita emissions, affordable housing for average citizens. But cramped living spaces (as low as 20 sqm per person), noise, and lack of personal green space—a "birdcage" lifestyle.'
+        },
+        example: {
+          zh: '香港、新加坡和东京的都市核心区：极高的人口密度和发达的轨道交通网络，大部分市民居住在30-60平方米的高层公寓中，房价收入比极高但对中低收入者有大量公屋保障。',
+          en: 'Hong Kong, Singapore, and central Tokyo: extreme density with world-class transit, most residents in 30-60 sqm high-rise apartments, high price-to-income ratios offset by extensive public housing.'
+        }
+      },
+      {
+        selectedVertices: ['sustainability', 'livability'],
+        sacrificedVertex: 'affordability',
+        name: {
+          zh: '可持续 + 宜居（昂贵的绿色郊区）',
+          en: 'Sustainable + Livable (The Expensive Green Suburb)'
+        },
+        description: {
+          zh: '打造融入绿色设计和低碳理念的宽敞舒适社区，但高昂的建设和土地成本使得房价极为昂贵，将中低收入群体拒之门外。',
+          en: 'Building spacious, comfortable communities with green design and low-carbon features, but exorbitant construction and land costs make housing prohibitive for middle- and low-income groups.'
+        },
+        realWorldImpact: {
+          zh: '社区环境优美、居住舒适度高、碳排放得到良好控制，但房价高企，只有高收入阶层才能负担。教师、护士、消防员等城市必需的服务工作者被迫住在远郊，每天长时间通勤。城市出现严重的阶层空间隔离。',
+          en: 'Beautiful neighborhoods with high comfort and controlled emissions, but only affordable to the wealthy. Essential workers (teachers, nurses, firefighters) are pushed to distant suburbs with long commutes, creating severe spatial segregation.'
+        },
+        example: {
+          zh: '美国加州的帕罗奥图（Palo Alto）和库比蒂诺（Cupertino）——硅谷核心区，拥有极佳的绿色环境和低密度居住品质，可持续发展指标领先，但中位数房价超过200万美元。',
+          en: 'Palo Alto and Cupertino in California—prime Silicon Valley locations with excellent green environments and low-density living, leading sustainability metrics, but median home prices exceed $2M.'
+        }
+      },
+      {
+        selectedVertices: ['livability', 'affordability'],
+        sacrificedVertex: 'sustainability',
+        name: {
+          zh: '宜居 + 可负担（城市无序蔓延）',
+          en: 'Livable + Affordable (Urban Sprawl)'
+        },
+        description: {
+          zh: '在城市外围建设大面积的低密度独栋住宅，土地成本相对低廉且居住空间宽敞舒适，但以高碳排放和生态破坏为代价。',
+          en: 'Building large areas of low-density single-family homes on the urban fringe—land is cheap and homes are spacious, but at a devastating environmental cost.'
+        },
+        realWorldImpact: {
+          zh: '家家户户拥有大房子、前庭后院和私家车，居住品质极高，房价也相对可控。但城市像"摊大饼"一样无限扩张，吞噬耕地和自然栖息地。私人汽车成为唯一出行方式，交通拥堵和碳排放飙升，公共交通因为密度太低无法有效运营。',
+          en: 'Every household owns a large home with front and back yards and a private car—high living quality at manageable prices. But the city sprawls endlessly, devouring farmland and natural habitats. Cars become the only viable transport, causing congestion and soaring emissions.'
+        },
+        example: {
+          zh: '美国阳光带城市（如休斯顿、凤凰城、亚特兰大）的郊区蔓延模式：宽敞的独栋住宅价格相对可负担，但城市极其依赖汽车，人均碳排放为全球最高水平。',
+          en: 'Sun Belt US cities (Houston, Phoenix, Atlanta): sprawling suburbs with affordable single-family homes, but extreme car dependency and the world\'s highest per-capita carbon emissions.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'job-hunting',
+    name: {
+      zh: '求职不可能三角',
+      en: 'Job Hunting Trilemma'
+    },
+    category: 'business',
+    tagline: {
+      zh: '每个职场人在选择工作时都必须面对的灵魂拷问',
+      en: 'The soul-searching every professional faces when choosing a job'
+    },
+    introduction: {
+      zh: '在求职和职业规划中，几乎每一个人都会遇到这个经典的三角困境：一份工作很难同时给予你丰厚的薪酬回报、广阔的成长前景和舒适的生活平衡。你最多只能追求其中的两个，第三个必须做出取舍。理解这个三角，是做出清醒职业选择的第一步。',
+      en: 'In job hunting and career planning, almost everyone encounters this classic trilemma: a single job rarely offers high compensation, strong growth prospects, and comfortable work-life balance simultaneously. You can pursue at most two, and the third must be a conscious sacrifice.'
+    },
+    vertices: [
+      {
+        id: 'compensation',
+        name: {
+          zh: '高薪酬',
+          en: 'High Compensation'
+        },
+        description: {
+          zh: '提供高于行业平均水平的薪资、丰厚的年终奖金、股票期权以及完善的福利待遇（补充公积金、商业保险等）。',
+          en: 'Above-market salary, generous bonuses, stock options, and comprehensive benefits (supplemental housing fund, commercial insurance).'
+        },
+        details: {
+          zh: '高薪酬是最直接、最显性的工作价值度量。它代表着市场对你能力的高度认可，也为你的生活品质提供了坚实的经济基础。高薪岗位通常集中在头部互联网大厂、金融投资机构、顶级咨询公司和外企。但这些公司的竞争极为激烈，对结果的要求极高，往往伴随着超长的工作时间、巨大的精神压力以及随时被优化（裁员）的不安全感。高薪在本质上是在购买你的时间、健康和承受高压的能力。',
+          en: 'Compensation is the most direct measure of a job\'s value. Top-paying roles concentrate in big tech, finance, consulting, and multinationals—but come with relentless competition, extreme pressure, long hours, and job insecurity. High pay essentially buys your time, health, and capacity to handle stress.'
+        },
+        colorHue: 45 // Salary Gold
+      },
+      {
+        id: 'growth',
+        name: {
+          zh: '好前景',
+          en: 'Growth & Prospects'
+        },
+        description: {
+          zh: '具备清晰的职业晋升通道、丰富的技能学习和培训机会、有影响力的项目经验以及行业内的长期发展潜力。',
+          en: 'Clear career advancement paths, abundant learning and skill development opportunities, impactful project experience, and long-term industry potential.'
+        },
+        details: {
+          zh: '好前景意味着你不仅是在"打工"，而是在为自己的职业生涯投资。一个具有高成长性的岗位能让你接触到最前沿的技术、最核心的业务和最优秀的人脉，这些积累将成为你未来无论跳槽还是创业都受用不尽的资本。然而，高成长往往伴随不确定性——快速成长的公司体系尚不完善，需要你身兼多职、超负荷运转。而且成长和薪酬在早期往往不可兼得，大部分高潜力的"好前景"岗位初始薪资可能远低于大厂标准。',
+          en: 'Growth means you\'re not just working but investing in your career. High-growth roles offer cutting-edge tech, core business exposure, and top-tier networks—capital that pays off whether you switch jobs or start a company. But growth comes with chaos: immature systems, overloaded responsibilities, and often below-market starting pay.'
+        },
+        colorHue: 215 // Career Blue
+      },
+      {
+        id: 'balance',
+        name: {
+          zh: '好生活',
+          en: 'Work-Life Balance'
+        },
+        description: {
+          zh: '正常工作时间内高效完成工作即可下班，极少加班和周末打扰，有充足的时间陪伴家人、发展爱好和维护身心健康。',
+          en: 'Finishing work within normal hours with minimal overtime or weekend disruptions, leaving ample time for family, hobbies, and personal health.'
+        },
+        details: {
+          zh: '工作生活平衡是长期职业可持续性的基石。它让你保持健康的身体、稳定的情绪和良好的人际关系，从而能够以饱满的状态在职业生涯中走得更远。平衡型岗位通常来自外企、国企、事业单位或实行弹性工作制的科技公司。但这种平衡是有代价的：你的薪酬天花板通常低于竞争激烈的行业，成长速度也相对缓慢。长期处于"舒适区"可能会在行业动荡或年龄增长时使自己丧失外部竞争力。',
+          en: 'Work-life balance is the foundation of long-term career sustainability—keeping you healthy, emotionally stable, and relationally connected so you can go the distance. Balance-focused roles (foreign firms, state-owned enterprises, flexible tech companies) trade lower pay ceilings and slower growth for comfort, risking competitiveness in turbulent times.'
+        },
+        colorHue: 150 // Life Green
+      }
+    ],
+    tradeOffs: [
+      {
+        selectedVertices: ['compensation', 'growth'],
+        sacrificedVertex: 'balance',
+        name: {
+          zh: '高薪 + 高成长（大厂卷王路线）',
+          en: 'High Pay + High Growth (The Hustle Path)'
+        },
+        description: {
+          zh: '进入头部大厂或明星创业公司，拿顶薪做核心项目快速镀金，代价是朝九晚九甚至更长的工作时间和巨大的精神压力。',
+          en: 'Join a top-tier tech giant or star startup for maximum pay and core projects, at the cost of 9-to-9 schedules and immense mental pressure.'
+        },
+        realWorldImpact: {
+          zh: '三年内薪资翻倍、履历光鲜、技能突飞猛进，但也收获了腰间盘突出、体检报告亮红灯和"35岁危机"的焦虑。几乎没有时间陪伴家人、谈恋爱或发展任何工作以外的兴趣爱好。',
+          en: 'Salary doubles in three years, resplendent resumé, skyrocketing skills—along with back problems, alarming health checkups, and "35-year-old crisis" anxiety. Almost zero time for family, dating, or hobbies.'
+        },
+        example: {
+          zh: '互联网大厂的"996"核心部门（字节跳动、拼多多等）、顶级投行的分析师/经理岗（每周100小时工作制）、头部咨询公司 McKinsey 的顾问团队。',
+          en: 'Core 996 departments in Chinese big tech (ByteDance, Pinduoduo), investment banking analyst programs (100-hour weeks), McKinsey consulting teams.'
+        }
+      },
+      {
+        selectedVertices: ['growth', 'balance'],
+        sacrificedVertex: 'compensation',
+        name: {
+          zh: '成长 + 生活（公务员/国企稳定路线）',
+          en: 'Growth + Balance (The Stable Route)'
+        },
+        description: {
+          zh: '获得稳定可预期的职业发展通道和规律的生活节奏，但薪资水平远低于市场化机构，天花板明显。',
+          en: 'Stable predictable career progression with regular hours, but compensation lags far behind market-driven organizations with a visible ceiling.'
+        },
+        realWorldImpact: {
+          zh: '每天朝八晚五，周末双休，铁饭碗带来的安全感。工作压力小，有大量时间经营家庭和个人生活。但薪资增长缓慢，同龄人已经在互联网年薪百万时，你可能还在为每个月几千块的加薪苦苦等待。长期而言，专业技能在市场上竞争力下降，中年以后难以再跳槽到高薪行业。',
+          en: 'Regular 8-to-5 schedule, weekends off, iron rice bowl security. Low stress with ample family and personal time. But salary growth is slow—peers in tech hit million-dollar packages while you wait for modest raises. Long-term market competitiveness declines.'
+        },
+        example: {
+          zh: '中国公务员体系、事业单位编制内岗位、国有企业（如国家电网、中石化）、高校行政和教职。',
+          en: 'Chinese civil service, public institutions, state-owned enterprises (State Grid, Sinopec), university administration and faculty positions.'
+        }
+      },
+      {
+        selectedVertices: ['balance', 'compensation'],
+        sacrificedVertex: 'growth',
+        name: {
+          zh: '生活 + 高薪（养老型高薪岗位）',
+          en: 'Balance + High Pay (The Cozy High-Pay Niche)'
+        },
+        description: {
+          zh: '薪资丰厚且生活规律，但岗位技术含量低、业务边缘化或晋升空间狭小，长期处于职业舒适区。',
+          en: 'Generous pay with regular hours, but the role lacks technical depth, sits on the business periphery, or has minimal promotion prospects—a career comfort zone.'
+        },
+        realWorldImpact: {
+          zh: '当前的生活状态令人羡慕——钱多事少离家近。但几年之后会发现，自己的技能和履历在市场上几乎没有议价能力。如果公司业务调整或行业下行，你将是最先被裁撤的"高薪低效"人员，届时将面临极其被动的求职局面。',
+          en: 'Current life is enviable—high pay, easy work, short commute. But years later, your skills and resumé have minimal market leverage. If restructuring or downturns hit, you\'re the first "high-cost low-impact" headcount cut, facing an extremely difficult job search.'
+        },
+        example: {
+          zh: '外企在中国的"养老部门"（如 legacy 业务维护岗）、传统行业的 IT 支持部门、某些垄断性质国企的中后台职能岗。',
+          en: '\'Comfortable\' roles in foreign companies\' legacy business units, IT support in traditional industries, back-office functions in certain monopolistic state-owned enterprises.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'love-triangle',
+    name: {
+      zh: '斯腾伯格爱情三角',
+      en: 'Sternberg\'s Triangular Theory of Love'
+    },
+    category: 'life',
+    tagline: {
+      zh: '耶鲁大学心理学家提出的著名人际关系模型',
+      en: 'The famous relationship model proposed by Yale psychologist Robert Sternberg'
+    },
+    introduction: {
+      zh: '由耶鲁大学心理学家罗伯特·斯腾伯格（Robert Sternberg）提出。他认为完美的爱情由三个核心要素构成：激情、亲密和承诺。这三种成分的不同组合方式构成了七种不同类型的爱。而"完美之爱"——同时具备三者——是最为理想但也最难维持的状态。大多数人的爱情关系都不得不在某一个维度上有所欠缺。',
+      en: 'Proposed by Yale psychologist Robert Sternberg. It states that love consists of three core components: passion, intimacy, and commitment. Different combinations of these three produce seven types of love. "Consummate love"—possessing all three—is the ideal but most difficult to sustain. Most relationships inevitably fall short in at least one dimension.'
+    },
+    vertices: [
+      {
+        id: 'passion',
+        name: {
+          zh: '激情',
+          en: 'Passion'
+        },
+        description: {
+          zh: '强烈的情感吸引、浪漫的情怀、性的渴望和心动的感觉，是爱情中最炽热和最具驱动力的部分。',
+          en: 'Intense emotional attraction, romantic feelings, sexual desire, and butterflies—the hottest, most driving force in love.'
+        },
+        details: {
+          zh: '激情是爱情的"火花"和"燃料"，决定了关系初期的强烈程度和浪漫色彩。它让人心跳加速、寝食难安、充满创造力。但激情天然是短暂的——热恋期通常在6个月到2年后逐渐消退。长期的激情难以维持，因为人体对多巴胺和苯乙胺等"爱情激素"会产生耐受性。激情至上的关系在火花燃尽后往往迅速降温，如果没有亲密和承诺的支撑，分手只是时间问题。',
+          en: 'Passion is love\'s "spark" and "fuel," driving the intense chemistry of new romance. It makes hearts race and minds obsessed. But passion is inherently short-lived—the honeymoon phase typically fades after 6-24 months as the brain builds tolerance to dopamine and PEA. Relationships built solely on passion often fizzle out quickly without intimacy and commitment.'
+        },
+        colorHue: 340 // Romantic Red
+      },
+      {
+        id: 'intimacy',
+        name: {
+          zh: '亲密',
+          en: 'Intimacy'
+        },
+        description: {
+          zh: '情感上的亲近感、深度的理解、相互的倾诉与倾听、真诚的分享和支持，是爱情中最温暖的部分。',
+          en: 'Emotional closeness, deep mutual understanding, open communication, genuine sharing and support—the warmest component of love.'
+        },
+        details: {
+          zh: '亲密是爱情中"朋友"的那一面。它建立在长期的相互陪伴、坦诚的沟通和生活细节的共享之上。亲密使你们成为彼此最信任的人——开心时第一个想分享的人，难过时第一个想依靠的人。亲密感需要时间和耐心来培养，它不像激情那样来得轰轰烈烈，但比激情更加持久和稳固。然而，只有亲密没有激情的关系很容易"友谊化"，双方更像是至亲好友而非情侣爱人，缺乏浪漫的吸引力。',
+          en: 'Intimacy is the "friendship" side of love, built on long-term companionship, honest communication, and shared life details. It makes you each other\'s most trusted confidant—the first person to share joy or seek comfort. Intimacy requires time and patience to develop. It\'s less intense but more durable than passion. However, intimacy without passion risks becoming platonic—more like best friends than romantic partners.'
+        },
+        colorHue: 210 // Deep Trust Blue
+      },
+      {
+        id: 'commitment',
+        name: {
+          zh: '承诺',
+          en: 'Commitment'
+        },
+        description: {
+          zh: '在短期内决定去爱一个人，以及在长期中决定维持这段关系的决心、责任和不离不弃的意志。',
+          en: 'The short-term decision to love someone and the long-term determination to maintain the relationship through thick and thin.'
+        },
+        details: {
+          zh: '承诺是爱情中"意志"的那一面。它不只是口头上的"我爱你"，更是在困难时刻选择不放手、在面对诱惑时选择忠诚、在激情消退后选择坚持。承诺是爱情在时间维度上的锚。然而，只有承诺缺乏激情和亲密的关系是冰冷和空洞的——两个人可能像室友一样在一起生活了几十年，履行着婚姻的责任，却早已没有心动的感觉和交心的对话。这种"空壳婚姻"在很多传统社会中非常普遍。',
+          en: 'Commitment is the "will" side of love—not just saying "I love you" but choosing not to let go in hard times, remaining loyal in temptation, and persevering after passion fades. Commitment anchors love across time. However, commitment without passion or intimacy is cold and hollow—two people living together like roommates for decades, fulfilling marital duties without romantic spark or heartfelt conversation. This "empty love" is common in many traditional societies.'
+        },
+        colorHue: 50 // Loyalty Gold
+      }
+    ],
+    tradeOffs: [
+      {
+        selectedVertices: ['passion', 'intimacy'],
+        sacrificedVertex: 'commitment',
+        name: {
+          zh: '激情 + 亲密（浪漫式爱情）',
+          en: 'Passion + Intimacy (Romantic Love)'
+        },
+        description: {
+          zh: '两人之间既有强烈的吸引又有深刻的沟通和理解，像恋人也是最好的朋友，但缺乏长远的承诺和未来的规划。',
+          en: 'Strong chemistry and deep communication—lovers and best friends in one—but lacking long-term commitment and future planning.'
+        },
+        realWorldImpact: {
+          zh: '热恋时是一段极其美好和投入的关系，彼此完全沉浸在当下。但随着时间推移，激情自然消退后，关系会因为缺乏"走下去的约定"而变得脆弱。当遇到现实困难或出现更优秀的追求者时，这段关系很容易无疾而终。',
+          en: 'An intensely beautiful and immersive relationship in the moment. But as passion naturally fades, the lack of commitment makes it fragile. Faced with life challenges or other options, the relationship often dissolves without closure.'
+        },
+        example: {
+          zh: '校园恋情、假期邂逅的浪漫关系、只谈恋爱不结婚的情侣——两人享受当下但不谈论未来，毕业或异地往往自然分手。',
+          en: 'Campus romances, holiday flings, couples who date without discussing marriage—enjoying the present but parting ways when life circumstances change.'
+        }
+      },
+      {
+        selectedVertices: ['intimacy', 'commitment'],
+        sacrificedVertex: 'passion',
+        name: {
+          zh: '亲密 + 承诺（伴侣式爱情）',
+          en: 'Intimacy + Commitment (Companionate Love)'
+        },
+        description: {
+          zh: '两个人是彼此最信任的依靠，生活融洽、共同承担家庭责任，但关系中已经没有了最初的激情和浪漫火花。',
+          en: 'Two people who trust each other completely, share life harmoniously, and co-parent together—but the initial spark and romance have faded.'
+        },
+        realWorldImpact: {
+          zh: '这段关系非常稳定和安全，像一杯温开水一样舒适放心。但很多人会感到"这不是爱情，只是亲情"的困惑。当外面出现一个重新点燃激情的人时，婚姻可能面临巨大的诱惑和危机——即"中年危机"的典型场景。',
+          en: 'Extremely stable and secure, like a warm cup of water—comfortable and reliable. But many wonder "is this still love or just family?" When an outside spark appears, the marriage faces severe temptation—the classic "midlife crisis" scenario.'
+        },
+        example: {
+          zh: '结婚十年以上的老夫老妻、为了孩子维系婚姻的夫妻、中国传统社会中"搭伙过日子"的婚姻模式。',
+          en: 'Couples married 10+ years, parents staying together for the kids, the traditional Chinese "cooperative partnership" marriage model.'
+        }
+      },
+      {
+        selectedVertices: ['commitment', 'passion'],
+        sacrificedVertex: 'intimacy',
+        name: {
+          zh: '承诺 + 激情（愚昧式爱情 / 闪电恋）',
+          en: 'Commitment + Passion (Fatuous Love / Whirlwind Romance)'
+        },
+        description: {
+          zh: '在强烈的激情驱动下迅速做出终身承诺（闪婚、私奔），但双方还远没有建立起深度的情感沟通和相互理解。',
+          en: 'Driven by intense passion, rushing into lifelong commitment (quick marriage, elopement) without having built deep emotional connection and understanding.'
+        },
+        realWorldImpact: {
+          zh: '开头轰轰烈烈，像童话一样浪漫——认识几周就认定对方是真爱，迅速订婚或结婚。但激情退潮后，双方发现彼此在价值观、生活习惯和沟通方式上完全没有磨合好。关系从天堂跌入地狱，往往以极其痛苦的分离告终。',
+          en: 'A fairytale start—recognizing "the one" within weeks and rushing to marriage. But when the passion subsides, fundamental mismatches in values, habits, and communication emerge. A fall from heaven to hell, often ending in painful separation.'
+        },
+        example: {
+          zh: '认识一个月就闪婚的情侣、偶像剧式的"私奔"恋爱关系、赌城拉斯维加斯的快速婚礼。',
+          en: 'Whirlwind marriages within a month of meeting, dramatic "runaway love" stories, Las Vegas quickie weddings.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'fiscal-trilemma',
+    name: {
+      zh: '财政不可能三角',
+      en: 'Fiscal Policy Trilemma'
+    },
+    category: 'economics',
+    tagline: {
+      zh: '每个政府在制定财税政策时都绕不开的预算悖论',
+      en: 'The budget paradox every government faces in fiscal policy-making'
+    },
+    introduction: {
+      zh: '在公共财政领域，任何一个国家的政府都面临着同一个不可能三角的约束：低税收、高福利和预算平衡三者不可兼得。如果人民既要求低税率以刺激经济活力，又要求慷慨的社会福利保障，那么必然的结果就是财政赤字和债务的持续积累。反之，如果政府坚持预算纪律，就必须在减税和增支之间做出明确的取舍。',
+      en: 'In public finance, every government faces the same trilemma constraint: low taxes, high welfare, and fiscal balance cannot be achieved simultaneously. If citizens demand both low tax rates to stimulate economic vitality and generous social welfare, the inevitable result is sustained fiscal deficits and debt accumulation.'
+    },
+    vertices: [
+      {
+        id: 'low-tax',
+        name: {
+          zh: '低税收',
+          en: 'Low Taxes'
+        },
+        description: {
+          zh: '保持较低的税率和简化的税制，减轻企业和居民个人的税收负担，以激发市场活力和私人投资消费。',
+          en: 'Maintaining low tax rates and simplified tax systems, reducing burdens on businesses and individuals to stimulate market vitality and private investment.'
+        },
+        details: {
+          zh: '低税收是自由市场经济学的核心主张。减税被广泛认为能够增加企业利润、提高居民可支配收入、吸引外资流入并促进就业增长。供应学派经济学家甚至认为减税可以通过刺激经济增长而"自己为自己买单"（拉弗曲线理论）。然而，低税收直接削减了政府的财政收入。除非同时削减政府开支，否则必然导致赤字扩大。更严重的是，低税收环境往往加剧贫富差距，因为富人从中受益最大，而社会福利的削减又最伤害底层民众。',
+          en: 'Low taxes are a core tenet of free-market economics. Tax cuts are believed to boost corporate profits, disposable income, foreign investment, and job growth. Supply-side economists even argue cuts can "pay for themselves" via the Laffer Curve. However, cuts directly reduce government revenue—without equal spending cuts, deficits balloon. Worse, low taxes often widen inequality.'
+        },
+        colorHue: 130 // Growth Green
+      },
+      {
+        id: 'high-welfare',
+        name: {
+          zh: '高福利',
+          en: 'High Welfare'
+        },
+        description: {
+          zh: '提供覆盖面广、给付标准高的社会保障体系，包括医疗、养老、失业救济、教育补贴等公共服务。',
+          en: 'Offering broad and generous social security systems including healthcare, pensions, unemployment benefits, and education subsidies.'
+        },
+        details: {
+          zh: '高福利是现代福利国家的核心承诺，旨在为所有公民提供从摇篮到坟墓的社会安全网。它显著提升了社会的公平性、减少了贫困和犯罪率、增进了民众的幸福感和社会凝聚力。然而，福利支出是政府预算中最大也是最刚性的部分。庞大且不断增长的福利开支需要充足的财政收入来支撑。如果经济增长放缓或人口老龄化加剧，"收不抵支"的缺口会像雪球一样越滚越大，最终导致主权债务危机。',
+          en: 'High welfare is the core promise of modern welfare states, offering cradle-to-grave social safety nets. It significantly improves equity, reduces poverty and crime, and enhances happiness and social cohesion. However, welfare spending is the largest and most rigid budget item. Without sufficient revenue, aging populations and slowing growth create snowballing deficits and sovereign debt crises.'
+        },
+        colorHue: 210 // Social Security Blue
+      },
+      {
+        id: 'balance',
+        name: {
+          zh: '预算平衡',
+          en: 'Fiscal Balance'
+        },
+        description: {
+          zh: '政府财政收入与财政支出保持基本一致，避免产生长期、大规模的财政赤字，控制公共债务水平的可持续性。',
+          en: 'Government revenues and expenditures remain roughly balanced, avoiding prolonged large deficits and keeping public debt at sustainable levels.'
+        },
+        details: {
+          zh: '预算平衡是传统财政纪律的黄金法则。它确保政府不会把今天的账单留给子孙后代，维护了国家信用的稳定和市场的信心。在国际金融市场上，预算赤字率是评级机构评定主权信用等级的核心指标之一。但追求预算平衡意味着政府在衰退时期不能轻易通过扩大支出来刺激经济——而恰恰在经济困难时期，民生保障的要求反而更高，税收收入却自然下降，形成天然的逆差压力。严格的预算平衡法则可能会迫使政府在衰退期采取紧缩措施，使经济雪上加霜。',
+          en: 'Fiscal balance is the golden rule of traditional budgetary discipline, ensuring today\'s bills aren\'t left for future generations and maintaining sovereign creditworthiness. But rigidly pursuing balance prevents governments from stimulus spending during recessions—precisely when welfare demands rise and tax revenues naturally fall. Austerity during downturns can deepen economic pain.'
+        },
+        colorHue: 50 // Balance Amber
+      }
+    ],
+    tradeOffs: [
+      {
+        selectedVertices: ['low-tax', 'high-welfare'],
+        sacrificedVertex: 'balance',
+        name: {
+          zh: '低税收 + 高福利（赤字财政模式）',
+          en: 'Low Tax + High Welfare (Deficit Financing)'
+        },
+        description: {
+          zh: '既不给企业和人民加税，又要维持慷慨的福利发放，唯一的办法就是借债——持续扩大财政赤字，积累国债。',
+          en: 'Neither raising taxes nor cutting welfare—the only way is borrowing, sustained deficits, and accumulating national debt.'
+        },
+        realWorldImpact: {
+          zh: '短期来看人民得到了实惠——税负低、福利好、生活有保障。政府也赢得了选票。但年复一年的预算赤字导致国债规模像滚雪球一样增长。一旦国际市场对偿债能力产生怀疑，利率飙升，政府可能面临债务违约甚至国家破产的风险。',
+          en: 'Short-term benefits: low taxes, good welfare, happy citizens, popular government. But year after year of deficits causes debt to snowball. If markets doubt repayment capacity, interest rates spike, risking sovereign default or national bankruptcy.'
+        },
+        example: {
+          zh: '希腊主权债务危机：加入欧元区后长期维持低税率和高福利，财政赤字失控，最终在2009年爆发债务危机，国家陷入深度衰退。',
+          en: 'The Greek sovereign debt crisis: low taxes and generous welfare within the Eurozone led to runaway deficits, culminating in a 2009 debt crisis and deep depression.'
+        }
+      },
+      {
+        selectedVertices: ['high-welfare', 'balance'],
+        sacrificedVertex: 'low-tax',
+        name: {
+          zh: '高福利 + 预算平衡（高税收北欧模式）',
+          en: 'High Welfare + Fiscal Balance (The High-Tax Nordic Model)'
+        },
+        description: {
+          zh: '维持高水平的福利支出同时保持预算健康，唯一的办法是征收高额的所得税、增值税和社保税。',
+          en: 'Sustaining generous welfare while keeping budgets healthy requires high income taxes, VAT, and social security contributions.'
+        },
+        realWorldImpact: {
+          zh: '福利体系极为完善，社会公平度高，贫困率极低。政府债务可控，基础设施优良。但个人所得税率可达50%以上，高收入群体的税负极高。企业和高技能人才面临"用脚投票"的压力——过高的税收可能引发人才和资本的外流，长远削弱经济活力。',
+          en: 'Comprehensive welfare, high social equity, minimal poverty, controlled debt, excellent infrastructure. But personal income tax rates can exceed 50%, heavily burdening high earners. Talent and capital face "voting with their feet" pressure, potentially eroding long-term economic dynamism.'
+        },
+        example: {
+          zh: '北欧国家（瑞典、丹麦、挪威、芬兰）的"社会民主主义"模式：个人所得税高达50-60%，但享有免费医疗、免费高等教育和慷慨的养老金。',
+          en: 'Nordic countries (Sweden, Denmark, Norway, Finland): personal income tax rates of 50-60% in exchange for free healthcare, free higher education, and generous pensions.'
+        }
+      },
+      {
+        selectedVertices: ['balance', 'low-tax'],
+        sacrificedVertex: 'high-welfare',
+        name: {
+          zh: '预算平衡 + 低税收（小政府大市场模式）',
+          en: 'Fiscal Balance + Low Tax (Small Government, Big Market)'
+        },
+        description: {
+          zh: '严格控制政府开支，压缩福利规模，将更多的社会责任交给市场、家庭和个人承担，从而实现低税率下的预算平衡。',
+          en: 'Strictly limiting government spending and welfare, leaving more social responsibility to markets, families, and individuals, achieving budget balance with low taxes.'
+        },
+        realWorldImpact: {
+          zh: '税负较轻，经济活力和企业竞争力强，政府债务稳健。但贫富差距大，弱势群体缺乏安全网——失业可能意味着失去医疗保险和住房，因病致贫、因老致贫的现象突出。社会不公和阶层固化问题严重。',
+          en: 'Low tax burden, strong economic vitality and business competitiveness, sound fiscal position. But wide wealth gaps and lack of safety nets for the vulnerable—job loss can mean losing health insurance and housing. Severe inequality and social stratification.'
+        },
+        example: {
+          zh: '美国（尤其在特朗普减税后）、新加坡、以及东亚"发展型国家"（如韩国在民主化之前的威权发展时期）。',
+          en: 'The United States (especially post-Trump tax cuts), Singapore, and East Asian developmental states (like pre-democratization South Korea).'
+        }
+      }
+    ]
+  },
+  {
+    id: 'service-trilemma',
+    name: {
+      zh: '服务不可能三角',
+      en: 'Service Trilemma'
+    },
+    category: 'business',
+    tagline: {
+      zh: '商业服务中亘古不变的质量、速度和价格铁律',
+      en: 'The eternal iron law of quality, speed, and cost in business services'
+    },
+    introduction: {
+      zh: '在商业和服务领域，存在着一条最朴素也最残酷的铁律：服务的品质、交付的速度和成本的价格，你永远只能同时得到其中的两个。所有成功或失败的服务商业模式，本质上都是对这个三角约束的理解、选择和精细化执行。',
+      en: 'In business and services, there is a fundamental iron law: quality, speed, and cost—you can only ever have two. Every successful or failed service business model is essentially an understanding, choice, and execution of this trilemma constraint.'
+    },
+    vertices: [
+      {
+        id: 'service-quality',
+        name: {
+          zh: '高品质',
+          en: 'High Quality'
+        },
+        description: {
+          zh: '服务体验卓越，交付成果精良，客户的每一次互动都能感受到专业、细致和超出预期的价值。',
+          en: 'Excellent service experience, flawless delivery, and every customer interaction reflects professionalism, attention to detail, and above-expectation value.'
+        },
+        details: {
+          zh: '高品质意味着在每一个触点上做到极致——从初次接触的响应速度、需求理解的准确性、方案的定制化程度，到交付物的完成度和售后支持的及时性。实现高品质服务需要雇佣行业顶尖人才、投入充分的培训和打造精密的运维体系。这些都需要时间和金钱的双重投入。在任何一个环节上降低标准以求速度或成本，都会直接反映在最终的服务品质上。',
+          en: 'Quality means excellence at every touchpoint—response time, understanding accuracy, customization depth, delivery completeness, and after-sales support. Achieving it requires top-tier talent, thorough training, and sophisticated operational systems—all demanding significant time and money.'
+        },
+        colorHue: 190 // Premium Blue
+      },
+      {
+        id: 'service-speed',
+        name: {
+          zh: '高速度',
+          en: 'High Speed'
+        },
+        description: {
+          zh: '从客户提出需求到交付成果的时间极短，服务响应敏捷，能够随时适应突发需求和快速变化的市场节奏。',
+          en: 'Extremely short turnaround from request to delivery, agile service response, capable of adapting to urgent needs and fast-changing market tempo.'
+        },
+        details: {
+          zh: '速度是当今商业世界的核心竞争力。能够比竞争对手更快地响应客户需求、更早地交付产品、更迅速地解决问题，意味着更高的客户满意度和更强的市场竞争力。追求速度要求高度的标准化和流程化，放弃每个项目的定制化环节，依靠模板和经验复用来压缩时间。但这种"快"不可避免地会牺牲个性化服务的深度和精品化的细节打磨，也通常需要投入更多的并行人力资源（等于更高的成本）。',
+          en: 'Speed is today\'s competitive edge. Faster response, earlier delivery, and quicker problem-solving mean higher satisfaction and stronger market position. Speed demands standardization, pre-built templates, and parallel resources—sacrificing customization and refinement, often at higher cost.'
+        },
+        colorHue: 30 // Speed Orange
+      },
+      {
+        id: 'service-cost',
+        name: {
+          zh: '低成本',
+          en: 'Low Cost'
+        },
+        description: {
+          zh: '服务的价格亲民且透明，客户可以用最低的预算获得所需要的基本服务，经济负担极小。',
+          en: 'Affordable and transparent pricing, enabling clients to obtain necessary services on minimal budgets.'
+        },
+        details: {
+          zh: '低成本意味着通过系统化的效率革命来实现价格的平民化。这通常需要：规模化的标准化生产、降低人力成本（如使用外包、自动化或自助服务）、精简流程消除浪费。低成本模式的核心不是做到最好，而是做到"够用就行"——满足客户的核心需求，但在非关键环节上不做过度投入。低成本与高品质天然矛盾：要为每一个人省钱，就不可能为每一个人做到极致精细。',
+          en: 'Low cost requires systemic efficiency revolutions: standardized mass production, reduced labor costs (outsourcing, automation, self-service), and streamlined processes. The core is not "best" but "good enough"—meeting core needs without over-investing in non-critical areas. Low cost and high quality are inherently contradictory.'
+        },
+        colorHue: 140 // Affordable Green
+      }
+    ],
+    tradeOffs: [
+      {
+        selectedVertices: ['service-quality', 'service-speed'],
+        sacrificedVertex: 'service-cost',
+        name: {
+          zh: '高品质 + 高速度（高昂的尊享服务）',
+          en: 'High Quality + High Speed (Premium Concierge Service)'
+        },
+        description: {
+          zh: '既要顶级的服务品质又要最快的交付速度，唯一的途径是付出最高的价格来覆盖顶尖人才和双倍资源投入。',
+          en: 'Demanding top quality and fastest delivery leaves only one option: paying the highest price for top talent and lavish resources.'
+        },
+        realWorldImpact: {
+          zh: '客户获得的是"皇帝般"的服务体验：24小时待命、专属团队、即时响应、完美交付。但账单上的数字也令人咂舌。这种模式天然只能服务高端客户和核心业务，市场规模有限。',
+          en: 'Clients enjoy "royal" treatment: 24/7 on-call, dedicated teams, instant response, flawless delivery. But the bill is astronomical—naturally limiting the market to premium clients.'
+        },
+        example: {
+          zh: '顶级咨询公司 McKinsey 的战略咨询项目、高端私人银行的全天候管家服务、包机出行服务。',
+          en: 'McKinsey strategic consulting engagements, high-net-worth private banking concierge services, private jet charter.'
+        }
+      },
+      {
+        selectedVertices: ['service-speed', 'service-cost'],
+        sacrificedVertex: 'service-quality',
+        name: {
+          zh: '高速度 + 低成本（标准化快消服务）',
+          en: 'High Speed + Low Cost (Standardized Fast Service)'
+        },
+        description: {
+          zh: '用标准化流程和规模化运营实现又快又便宜的服务，代价是服务千篇一律、缺乏个性化和细节打磨。',
+          en: 'Standardized processes and economies of scale deliver fast, cheap service—at the cost of cookie-cutter uniformity and lack of personalization.'
+        },
+        realWorldImpact: {
+          zh: '客户用很低的价格就能迅速获得服务，基本需求得到满足。但体验僵硬、流程化，遇到特殊需求或复杂情况时，标准模板完全无法应对。客户感觉自己只是流水线上的一个编号。',
+          en: 'Clients get service fast and cheap. Basic needs are met. But the experience is rigid and templated—unique or complex needs fall through the cracks. Clients feel like a number on an assembly line.'
+        },
+        example: {
+          zh: '麦当劳等快餐连锁的标准化服务流程、大型呼叫中心的语音导航系统、共享出行平台（Uber/Didi）的基础车型。',
+          en: 'McDonald\'s standardized service flow, large call center IVR systems, ride-hailing basic tier (UberX/Didi Express).'
+        }
+      },
+      {
+        selectedVertices: ['service-cost', 'service-quality'],
+        sacrificedVertex: 'service-speed',
+        name: {
+          zh: '低成本 + 高品质（慢工出细活的性价比路线）',
+          en: 'Low Cost + High Quality (Slow, Affordable Excellence)'
+        },
+        description: {
+          zh: '以极具竞争力的价格提供远超价格预期的优质服务，但需要客户耐心等待，交付周期远长于同行。',
+          en: 'Offering excellent quality at a competitive price, but requiring patient clients who accept delivery cycles far longer than competitors.'
+        },
+        realWorldImpact: {
+          zh: '客户以远低于市场的价格获得了真正高质量的服务，感到物超所值。但由于资源有限且精益求精，产能极其有限，排队等待时间长。心急的客户等不了，转而选择更快但更贵或更差的替代方案。商业模式难以规模化扩张。',
+          en: 'Clients receive truly high-quality service at a fraction of the market price—exceptional value. But limited capacity and meticulous craftsmanship mean long waiting lists. Impatient customers defect to faster (but more expensive or inferior) alternatives.'
+        },
+        example: {
+          zh: '独立工匠/手工艺人的定制作品（一把手工吉他等两年）、一些口碑极好的私房菜馆（不接受催菜）、GitLab 等开源自建方案。',
+          en: 'Independent artisan custom work (a two-year wait for a handcrafted guitar), word-of-mouth underground restaurants (no rushing the chef), self-hosted open-source solutions like GitLab.'
+        }
+      }
+    ]
   }
 ];
