@@ -22,6 +22,7 @@ export const uiTranslations = {
     catEconomics: "金融与经济",
     catPolitics: "政治与全球化",
     catTechnology: "硬核科技",
+    catBusiness: "商业与管理",
     catLife: "趣味与生活",
     
     cardTip: "💡 交互提示：点击三角形的任一顶点，重新编排制衡组合",
@@ -53,6 +54,7 @@ export const uiTranslations = {
     categoryEconomics: "📈 经济与金融",
     categoryPolitics: "⚖️ 政治与全球化",
     categoryTechnology: "🛡️ 现代科技",
+    categoryBusiness: "💼 商业与管理",
     categoryLife: "☕ 趣味与生活"
   },
   en: {
@@ -79,6 +81,7 @@ export const uiTranslations = {
     catPolitics: "Politics & Globalization",
     catTechnology: "Hardcore Tech",
     catLife: "Fun & Daily Life",
+    catBusiness: "Business & Management",
     
     cardTip: "💡 Interactive Tip: Click any vertex to re-arrange the trade-off combination",
     cardTabTradeoff: "⚖️ Dynamic Trade-offs",
@@ -109,6 +112,7 @@ export const uiTranslations = {
     categoryEconomics: "📈 Economics & Finance",
     categoryPolitics: "⚖️ Politics & Globalization",
     categoryTechnology: "🛡️ Modern Technology",
+    categoryBusiness: "💼 Business & Management",
     categoryLife: "☕ Fun & Daily Life"
   }
 };

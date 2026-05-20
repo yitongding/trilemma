@@ -73,6 +73,7 @@ export const TrilemmaTriangle: FC<TrilemmaTriangleProps> = ({
           {trilemma.category === "economics" && t("categoryEconomics")}
           {trilemma.category === "politics" && t("categoryPolitics")}
           {trilemma.category === "technology" && t("categoryTechnology")}
+          {trilemma.category === "business" && t("categoryBusiness")}
           {trilemma.category === "life" && t("categoryLife")}
         </span>
         <h2

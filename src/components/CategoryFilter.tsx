@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 
-export type CategoryType = 'all' | 'economics' | 'politics' | 'technology' | 'life';
+export type CategoryType = 'all' | 'economics' | 'politics' | 'technology' | 'business' | 'life';
 
 interface CategoryFilterProps {
   currentCategory: CategoryType;
@@ -16,6 +16,7 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({ currentCategory,
     { key: 'economics', label: t('catEconomics'), icon: '📈' },
     { key: 'politics', label: t('catPolitics'), icon: '⚖️' },
     { key: 'technology', label: t('catTechnology'), icon: '🛡️' },
+    { key: 'business', label: t('catBusiness'), icon: '💼' },
     { key: 'life', label: t('catLife'), icon: '☕' }
   ];
 

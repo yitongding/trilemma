@@ -20,7 +20,7 @@ export interface TradeOff {
 export interface Trilemma {
   id: string;
   name: LocalizedText;
-  category: 'economics' | 'politics' | 'technology' | 'life';
+  category: 'economics' | 'politics' | 'technology' | 'business' | 'life';
   tagline: LocalizedText;
   introduction: LocalizedText;
   vertices: [Vertex, Vertex, Vertex];
@@ -546,7 +546,7 @@ export const trilemmas: Trilemma[] = [
       zh: '项目管理铁三角',
       en: 'Project Management Iron Triangle'
     },
-    category: 'life',
+    category: 'business',
     tagline: {
       zh: '每一个职场人、程序员和产品经理都必须面对的现实骨感',
       en: 'Hard boundaries faced by every professional, programmer, and manager'
@@ -790,8 +790,776 @@ export const trilemmas: Trilemma[] = [
           en: 'Cherishes beautiful, stress-free campus memories, but faces GPA crisis and must beg professors for a passing grade of 60 at finals.'
         },
         example: {
-          zh: '贯彻“大学不挂科，青春不完整”、及时行乐的佛系乐天派学生。',
+          zh: '贯彻"大学不挂科，青春不完整"、及时行乐的佛系乐天派学生。',
           en: 'The carefree, easygoing student prioritizing life experiences and mental relaxation over competitive academic tracks.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'energy-trilemma',
+    name: {
+      zh: '能源不可能三角',
+      en: 'Energy Trilemma'
+    },
+    category: 'economics',
+    tagline: {
+      zh: '世界能源理事会提出的全球能源可持续发展核心难题',
+      en: 'The core global sustainability challenge identified by the World Energy Council'
+    },
+    introduction: {
+      zh: '由世界能源理事会（World Energy Council）系统性地提出。在全球能源政策的制定过程中，任何国家都无法同时完美实现能源安全、能源公平和环境可持续三个目标。三个维度之间存在着天然的张力与抵消关系，各国必须根据自身的资源禀赋与发展阶段做出权衡取舍。',
+      en: 'Systematically proposed by the World Energy Council. No nation can simultaneously achieve energy security, energy equity, and environmental sustainability. There is inherent tension among these three dimensions, forcing each country to make trade-offs based on its resource endowment and development stage.'
+    },
+    vertices: [
+      {
+        id: 'energy-security',
+        name: {
+          zh: '能源安全',
+          en: 'Energy Security'
+        },
+        description: {
+          zh: '保障国家能源供应体系具备抵御外部冲击和中断的能力，确保能源的连续、可靠供给，包括供应来源多元化和基础设施韧性。',
+          en: 'Protecting the national energy supply system against external shocks and disruptions, ensuring continuous and reliable energy delivery with diversified sources and resilient infrastructure.'
+        },
+        details: {
+          zh: '能源安全是国民经济的生命线。它要求国家建立足以应对地缘政治危机、自然灾害和供应链中断的原油战略储备、天然气储气库以及多元化的进口管道和海运路线。为了实现独立自主，国家可能投资建设成本高昂的冗余基础设施（如连接多个地区的输电网），或者支持本土化石能源（如页岩油、煤制油）的高污染开发。',
+          en: 'The lifeline of a national economy. It demands strategic petroleum reserves, LNG terminals, diverse pipeline routes, and redundant power grids to withstand geopolitical shocks and natural disasters. Achieving this may require investments in costly surplus infrastructure or supporting high-pollution domestic fossil fuel extraction.'
+        },
+        colorHue: 30 // Amber / Gold
+      },
+      {
+        id: 'energy-equity',
+        name: {
+          zh: '能源公平',
+          en: 'Energy Equity'
+        },
+        description: {
+          zh: '确保所有国民和社会各阶层都能以可负担的价格获取充足的现代能源服务，涵盖电力、供暖和清洁烹饪燃料。',
+          en: 'Ensuring all citizens and social classes can access adequate modern energy services—electricity, heating, and clean cooking—at affordable prices.'
+        },
+        details: {
+          zh: '这是关乎社会公平和消除能源贫困的核心诉求。在全球范围内，仍有数亿人口缺乏基本的电力供应或依赖传统生物燃料（如木柴、牛粪）取暖做饭。降低电价和燃油补贴虽然能够减轻民生负担，但会扭曲市场价格信号，抑制对清洁能源和节能技术的投资，并极大地加重政府财政包袱。',
+          en: 'A core demand for social justice and eradicating energy poverty. Globally, hundreds of millions lack electricity or rely on traditional biomass. Subsidizing fuel prices alleviates household burdens but distorts market signals, suppresses investment in renewables and efficiency, and weighs heavily on government budgets.'
+        },
+        colorHue: 175 // Teal / Cyan
+      },
+      {
+        id: 'environment',
+        name: {
+          zh: '环境可持续',
+          en: 'Environmental Sustainability'
+        },
+        description: {
+          zh: '在满足当前能源需求的同时，最大限度降低能源生产和消费活动对生态系统、气候环境和生物多样性的负面影响。',
+          en: 'Meeting present energy needs while minimizing negative impacts on ecosystems, climate, and biodiversity from energy production and consumption.'
+        },
+        details: {
+          zh: '这是应对全球气候变暖与生态危机的时代使命。要求各国大幅削减化石能源的消费比例，大力推广风能、太阳能、核能和水力等低碳甚至零排放能源结构。然而，清洁能源转型需要大规模的前期资本投入（新建电厂、改造电网），将对电价和能源供应稳定性带来短期冲击，同时在储能技术尚未完全成熟的条件下，过度依赖间歇性可再生能源可能引发供电保障风险。',
+          en: 'The defining mission against climate change. It demands drastic cuts in fossil fuel consumption and a massive shift to wind, solar, nuclear, and hydro. However, the transition requires enormous upfront capital, raising electricity prices and potentially destabilizing grid reliability where storage technology remains immature.'
+        },
+        colorHue: 125 // Leaf Green
+      }
+    ],
+    tradeOffs: [
+      {
+        selectedVertices: ['energy-security', 'energy-equity'],
+        sacrificedVertex: 'environment',
+        name: {
+          zh: '能源安全 + 能源公平（煤炭工业化之路）',
+          en: 'Energy Security + Energy Equity (Industrialization via Coal)'
+        },
+        description: {
+          zh: '优先保障能源的稳定供应和全民廉价使用，不惜大规模利用本地煤炭、石油等高碳化石能源。',
+          en: 'Prioritizes stable supply and low-cost universal energy access by heavily relying on local coal and oil.'
+        },
+        realWorldImpact: {
+          zh: '国民享有低电价和强劲的工业产能增长，但代价是严重的空气污染、雾霾频发以及碳排放量的急剧飙升，成为全球气候治理的阻力。',
+          en: 'Citizens enjoy low electricity prices and rapid industrial growth, but at the cost of severe air pollution, smog, and soaring carbon emissions.'
+        },
+        example: {
+          zh: '印度和中国在工业化初期的能源路线：依赖大量廉价的煤炭火电支撑经济高速增长和农村电气化。',
+          en: 'India and China during early industrialization: relying on cheap coal-fired power to fuel rapid economic growth and rural electrification.'
+        }
+      },
+      {
+        selectedVertices: ['energy-equity', 'environment'],
+        sacrificedVertex: 'energy-security',
+        name: {
+          zh: '能源公平 + 环境可持续（激进的绿色转型）',
+          en: 'Energy Equity + Environmental Sustainability (Radical Green Transition)'
+        },
+        description: {
+          zh: '大力补贴清洁能源和碳减排，并保障弱势群体的能源消费可负担，但不得不接受能源供应在极端天气下的不稳定性。',
+          en: 'Heavily subsidizes clean energy and carbon reduction while protecting vulnerable households, but must accept supply instability during extreme weather.'
+        },
+        realWorldImpact: {
+          zh: '碳排放显著下降，环保成效突出，但电网对天气的依赖度极高，一旦遭遇连续阴天或无风天气，将面临大面积停电和工业限产。',
+          en: 'Carbon emissions drop significantly and air quality improves, but extreme weather can cause blackouts and industrial shutdowns.'
+        },
+        example: {
+          zh: '德国能源转型（Energiewende）：大力发展风电和光伏，提供慷慨的居民电价补贴，但遭遇"黑暗无风期"时不得不重启煤电或从邻国高价进口电力。',
+          en: 'Germany\'s Energiewende: massive wind and solar deployment with generous subsidies, but facing "Dunkelflaute" (dark windless periods) requiring coal plant restarts or expensive power imports.'
+        }
+      },
+      {
+        selectedVertices: ['energy-security', 'environment'],
+        sacrificedVertex: 'energy-equity',
+        name: {
+          zh: '能源安全 + 环境可持续（昂贵清洁能源）',
+          en: 'Energy Security + Environmental Sustainability (Expensive Clean Energy)'
+        },
+        description: {
+          zh: '坚持清洁能源路线同时保障供应稳定，但清洁能源的高昂前期投入和运维成本将推高终端电价，加重民众经济负担。',
+          en: 'Pursues clean energy while ensuring supply stability, but high upfront and maintenance costs for green tech drive up retail electricity prices.'
+        },
+        realWorldImpact: {
+          zh: '电网清洁度大幅上升，能源自给率提高，但电费账单持续攀升，低收入家庭在"能源贫困"中挣扎，面临冬天交不起取暖费的困境。',
+          en: 'Cleaner grid and higher energy independence, but escalating bills push low-income households into energy poverty.'
+        },
+        example: {
+          zh: '日本福岛核事故后全面关停核电站，转为依赖昂贵的液化天然气（LNG）进口和太阳能补贴，电价大幅上涨，居民生活成本飙升。',
+          en: 'Post-Fukushima Japan: shutting down nuclear plants, shifting to expensive LNG imports and solar subsidies, causing soaring electricity prices.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'food-trilemma',
+    name: {
+      zh: '美食不可能三角',
+      en: 'Food Trilemma'
+    },
+    category: 'life',
+    tagline: {
+      zh: '每一个吃货每天都在面对的灵魂抉择',
+      en: 'The daily soul-searching every food lover faces'
+    },
+    introduction: {
+      zh: '在美食的选择面前，人类永远面临着这个残酷的铁三角约束：一道完美的菜肴几乎不可能同时满足美味可口、健康营养和实惠便捷三个条件。你最多只能追求其二，而必须心甘情愿地接受第三个维度的不尽人意。',
+      en: 'In the realm of food, humanity faces this brutal constraint: a perfect dish can almost never be simultaneously delicious, healthy, and affordable. You can have at most two, and must willingly accept the shortfall in the third dimension.'
+    },
+    vertices: [
+      {
+        id: 'delicious',
+        name: {
+          zh: '美味可口',
+          en: 'Delicious'
+        },
+        description: {
+          zh: '食物口感丰富、风味浓郁、香气诱人，能最大化激活味蕾的愉悦体验，带来满足感和精神慰藉。',
+          en: 'Rich flavors, enticing aromas, and satisfying textures that maximize taste pleasure and emotional comfort.'
+        },
+        details: {
+          zh: '美味是人类对食物最原始、最本能的追求。为了达到极致风味，往往需要大量使用高糖、高盐、高脂肪（如黄油、猪油、芝士）的食材，以及复杂的烹饪工艺（油炸、长时间炖煮、炭烤）。这些过程不仅耗费宝贵的时间和烹饪精力，也与现代健康饮食的科学建议相冲突。',
+          en: 'The most instinctive human pursuit of food. Achieving extreme flavor requires generous use of sugar, salt, and fat (butter, lard, cheese) and complex cooking techniques like deep-frying, slow-braising, and char-grilling—all time-consuming and at odds with health advice.'
+        },
+        colorHue: 10 // Tomato Red
+      },
+      {
+        id: 'healthy',
+        name: {
+          zh: '健康营养',
+          en: 'Healthy & Nutritious'
+        },
+        description: {
+          zh: '食材天然新鲜、营养均衡、低脂低糖低盐，富含膳食纤维、维生素和优质蛋白，有助于维持体态和预防慢性疾病。',
+          en: 'Fresh natural ingredients with balanced nutrition, low in fat, sugar, and salt, rich in fiber, vitamins, and lean protein.'
+        },
+        details: {
+          zh: '随着现代人对健康管理、减脂塑形和养生抗衰的高度重视，饮食健康化已经成为不可逆的趋势。健康食品通常要求蔬菜占大头、采用蒸煮而非油炸、使用天然低热量的调味代替工业化酱料。但这样的约束往往会牺牲食物的浓郁口味和爽感，让人觉得"食之无味"。新鲜有机食材的高昂价格也使得健康饮食成为一种奢侈品。',
+          en: 'With society\'s growing focus on wellness and weight management, healthy eating has become paramount. It demands more vegetables, steaming over frying, and natural low-calorie seasoning. However, these constraints often sacrifice rich taste, and premium organic ingredients come at a high price.'
+        },
+        colorHue: 130 // Fresh Green
+      },
+      {
+        id: 'affordable',
+        name: {
+          zh: '实惠便捷',
+          en: 'Affordable & Convenient'
+        },
+        description: {
+          zh: '价格低廉、购买方便、制作或获取流程简单快捷，适合快节奏的日常生活和大规模商业复制。',
+          en: 'Low price, easy access, and simple preparation or ordering, suitable for fast-paced daily life and mass production.'
+        },
+        details: {
+          zh: '在城市化、快节奏消费时代，"方便"和"便宜"是食品工业的座右铭。工业化流水线生产、高度标准化的加工食品能够极大地降低成本并保证稳定的口感。路边快餐、泡面、冷冻速食和连锁外卖能够在几分钟内解决一顿饭。然而为了降低成本并实现标准化，这些食品大量依赖廉价填充物和各种工业化添加剂以模拟风味和延长保质期，营养价值极低，口感也不如现做的餐食。',
+          en: 'In the age of urbanization and fast-paced consumption, convenience and low cost reign supreme. Industrial production lines and standardized processed foods drastically lower costs. Instant noodles, frozen meals, and fast food chains satisfy hunger in minutes—but rely on cheap fillers and industrial additives, offering low nutritional value.'
+        },
+        colorHue: 220 // Steel Blue
+      }
+    ],
+    tradeOffs: [
+      {
+        selectedVertices: ['delicious', 'healthy'],
+        sacrificedVertex: 'affordable',
+        name: {
+          zh: '美味 + 健康（昂贵的精致生活）',
+          en: 'Delicious + Healthy (Premium Lifestyle)'
+        },
+        description: {
+          zh: '既要色香味俱全，又要低脂低卡营养均衡。唯一的出路是选用顶级有机食材、进口橄榄油和高级香料，并花费大量时间精心烹饪。',
+          en: 'Demanding both rich flavor and nutritional balance requires premium organic ingredients, imported olive oil, and hours of careful cooking.'
+        },
+        realWorldImpact: {
+          zh: '食物精美无比，吃一口都是享受，且完全不用担心发胖。但一顿饭的材料成本和时间成本高得惊人，普通人难以承受。',
+          en: 'Every bite is a joy without health guilt, but the ingredient and time costs are prohibitive for the average person.'
+        },
+        example: {
+          zh: '米其林餐厅的高级轻食料理、日式怀石料理、使用有机食材的家庭慢食。',
+          en: 'Michelin-star fine dining kaiseki, farm-to-table organic slow food, premium health-conscious restaurants.'
+        }
+      },
+      {
+        selectedVertices: ['healthy', 'affordable'],
+        sacrificedVertex: 'delicious',
+        name: {
+          zh: '健康 + 实惠（自律的苦行餐）',
+          en: 'Healthy + Affordable (Ascetic Meal)'
+        },
+        description: {
+          zh: '严格控制预算并追求营养最大化，唯一的办法就是放弃口感，选择最基础、最朴素的天然食材。',
+          en: 'Sticking to a strict budget while maximizing nutrition means sacrificing flavor for basic, unseasoned natural ingredients.'
+        },
+        realWorldImpact: {
+          zh: '吃出了马甲线和充沛的体能，钱包也毫无压力，但每天的餐食寡淡如水，味同嚼蜡，缺乏美食带来的精神愉悦。',
+          en: 'Achieves a fit body, high energy, and low expenses—but every meal is bland and joyless, lacking the emotional comfort of good food.'
+        },
+        example: {
+          zh: '健身达人的水煮鸡胸肉+西兰花+糙米饭套餐；学生党的燕麦片+牛奶+香蕉极简早餐。',
+          en: 'A fitness devotee\'s boiled chicken breast + broccoli + brown rice; a student\'s minimal oatmeal + milk + banana breakfast.'
+        }
+      },
+      {
+        selectedVertices: ['affordable', 'delicious'],
+        sacrificedVertex: 'healthy',
+        name: {
+          zh: '实惠 + 美味（罪恶的快乐——不健康快餐）',
+          en: 'Affordable + Delicious (Guilty Pleasure — Unhealthy Fast Food)'
+        },
+        description: {
+          zh: '用低廉的价格做出让人欲罢不能的口味。这意味着大量使用精制碳水、饱和脂肪、糖和工业添加剂。',
+          en: 'Creating addictive flavors at rock-bottom prices means heavy use of refined carbs, saturated fats, sugar, and industrial additives.'
+        },
+        realWorldImpact: {
+          zh: '用几块钱就能获得满满的幸福感，高油高糖的搭配让大脑疯狂分泌多巴胺。但长期摄入导致肥胖、高血脂、糖尿病和心血管疾病的高发。',
+          en: 'Dopamine-rush happiness for pocket change—but long-term consumption leads to obesity, high cholesterol, diabetes, and heart disease.'
+        },
+        example: {
+          zh: '快餐炸鸡汉堡、方便面、工业化零食、奶茶、外卖烤串。',
+          en: 'Fast food fried chicken and burgers, instant noodles, packaged snacks, bubble tea, takeout skewers.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'privacy-trilemma',
+    name: {
+      zh: '隐私不可能三角',
+      en: 'Privacy Trilemma'
+    },
+    category: 'technology',
+    tagline: {
+      zh: '隐私保护技术中安全、合规与效率的艰难博弈',
+      en: 'The hard trade-off between security, compliance, and efficiency in privacy technology'
+    },
+    introduction: {
+      zh: '在密码学与隐私保护领域（尤其是区块链隐私币和通用隐私计算中），存在一个被广泛讨论的三角形困境：任何隐私保护系统都无法同时完美满足隐私性、可审计性和可扩展性三个维度的极致要求。这构成了现代数字隐私工程设计的核心制度与技术约束。',
+      en: 'In cryptography and privacy-preserving systems (especially blockchain privacy coins and general-purpose secure computation), there is a widely-discussed trilemma: no system can simultaneously achieve perfect privacy, auditability, and scalability. This forms the core design constraint of modern digital privacy engineering.'
+    },
+    vertices: [
+      {
+        id: 'privacy',
+        name: {
+          zh: '隐私性',
+          en: 'Privacy'
+        },
+        description: {
+          zh: '保护交易细节、用户身份和智能合约数据的机密性，确保未经授权的第三方无法从链上数据中获取可识别个人或敏感商业信息。',
+          en: 'Protects transaction details, user identities, and smart contract data from unauthorized parties.'
+        },
+        details: {
+          zh: '隐私性赋予了用户对自身数据的终极控制权，使其免受大数据监控、标记和针对性操纵。通过零知识证明、环签名、同态加密等先进密码学手段，隐私系统能够做到在不披露交易金额和参与者身份的前提下完成价值流转。然而，这些复杂的密码学构造计算开销极大，会显著拖慢系统的处理速度和增加交易成本。',
+          en: 'Privacy grants users ultimate control over their data, shielding them from surveillance and manipulation. Advanced cryptography like zero-knowledge proofs, ring signatures, and homomorphic encryption enables value transfer without revealing amounts or identities—but at tremendous computational cost.'
+        },
+        colorHue: 265 // Royal Violet
+      },
+      {
+        id: 'auditability',
+        name: {
+          zh: '可审计性',
+          en: 'Auditability'
+        },
+        description: {
+          zh: '为监管机构、审计师或特定验证者提供合规审查的能力，平衡隐私保护与反洗钱（AML）、反恐融资（CFT）等法律要求。',
+          en: 'Provides regulatory or audit access for compliance oversight, balancing privacy with AML/CFT legal requirements.'
+        },
+        details: {
+          zh: '在真实世界中，完全匿名的金融系统无法逃避洗钱、勒索软件和非法交易的滥用。可审计性要求系统具备可控的透明度——允许授权方在特定条件下（如法院令）查看交易流向。但引入"后门"或"监管密钥"机制将在密码学层面打开攻击面和信任假设，可能会被滥用以大规模破坏所有用户的隐私保障。',
+          en: 'Fully anonymous financial systems cannot escape abuse for money laundering and ransomware. Auditability demands controlled transparency—allowing authorized parties to trace flows under specific conditions. But introducing backdoors or regulatory keys creates attack surfaces and trust assumptions that could be abused.'
+        },
+        colorHue: 45 // Amber / Verification Gold
+      },
+      {
+        id: 'scalability',
+        name: {
+          zh: '可扩展性',
+          en: 'Scalability'
+        },
+        description: {
+          zh: '系统在用户数量、交易频率和数据量大幅增长时仍能保持低延迟、高吞吐量和可接受的运行成本。',
+          en: 'The system maintains low latency, high throughput, and acceptable costs as the number of users, transactions, and data volume grows.'
+        },
+        details: {
+          zh: '隐私系统如果想走向大规模主流应用（如日常支付、企业级隐私计算），就必须具备媲美 Visa 或传统云计算的性能指标。但是，隐私保护所需的额外密码学轮次和证明生成时间产生了巨大的计算和存储开销。在隐私保护和性能之间做出工程取舍，是阻碍隐私技术普及的最大技术瓶颈。',
+          en: 'To achieve mainstream adoption (daily payments, enterprise secure computation), privacy systems need Visa-like performance. But the extra cryptographic rounds and proof generation create massive computational overhead, presenting the biggest engineering barrier to privacy tech adoption.'
+        },
+        colorHue: 140 // Emerald
+      }
+    ],
+    tradeOffs: [
+      {
+        selectedVertices: ['privacy', 'auditability'],
+        sacrificedVertex: 'scalability',
+        name: {
+          zh: '隐私性 + 可审计性（以性能换合规）',
+          en: 'Privacy + Auditability (Compliance at the Cost of Performance)'
+        },
+        description: {
+          zh: '系统在保护用户交易隐私的同时为监管机构保留审计通道，但复杂的证明系统和加密验证流程严重拖慢交易速度。',
+          en: 'Protects user privacy while providing regulatory audit channels, but complex proof systems dramatically slow transaction processing.'
+        },
+        realWorldImpact: {
+          zh: '每笔交易都需要生成大量的零知识证明并经过额外的审计验证电路，导致用户需要等待较长时间才能完成转账，且网络拥堵时手续费高昂。',
+          en: 'Each transaction generates large cryptographic proofs with audit circuits, causing long wait times and high fees during network congestion.'
+        },
+        example: {
+          zh: 'Zcash 的"选择性透明"（Selective Disclosure）模式——用户可以选择向审计方披露交易细节，但完整的零知识证明生成极慢，严重限制了TPS。',
+          en: 'Zcash\'s Selective Disclosure mode—users can reveal transaction details to auditors, but full ZK proof generation is extremely slow, limiting TPS.'
+        }
+      },
+      {
+        selectedVertices: ['auditability', 'scalability'],
+        sacrificedVertex: 'privacy',
+        name: {
+          zh: '可审计性 + 可扩展性（透明高效的无隐私系统）',
+          en: 'Auditability + Scalability (Transparent & Efficient, No Privacy)'
+        },
+        description: {
+          zh: '完全公开透明的账本，所有交易数据一目了然，配合简单的哈希链即可获得极高的吞吐量，但用户的隐私完全暴露。',
+          en: 'A fully transparent ledger with all transaction data publicly visible, achieving high throughput via simple hash chains—but zero privacy for users.'
+        },
+        realWorldImpact: {
+          zh: '交易毫秒级确认，链上数据全面可查，监管机构可以实时监控所有资金的流动。然而任何人的收入、消费习惯和财富余额都在阳光之下，毫无遮拦。',
+          en: 'Millisecond confirmations and full chain data visibility regulators can monitor all fund flows in real time. But everyone\'s income, spending habits, and net worth are fully exposed.'
+        },
+        example: {
+          zh: '比特币和以太坊的公开透明模型——交易吞吐量适中，全节点验证简单，链上浏览器可供所有人查看每一笔转账的来龙去脉。',
+          en: 'Bitcoin and Ethereum\'s transparent model—moderate throughput, simple full-node verification, and block explorers showing every transaction\'s source and destination.'
+        }
+      },
+      {
+        selectedVertices: ['scalability', 'privacy'],
+        sacrificedVertex: 'auditability',
+        name: {
+          zh: '可扩展性 + 隐私性（抗监管的高速匿名网络）',
+          en: 'Scalability + Privacy (Anti-Regulatory High-Speed Anonymity)'
+        },
+        description: {
+          zh: '通过轻量级的密码学方案实现极快的匿名交易处理，但完全缺少合规审计接口，成为监管真空地带。',
+          en: 'Achieves fast anonymous transactions via lightweight cryptography but completely lacks compliance interfaces, creating a regulatory black hole.'
+        },
+        realWorldImpact: {
+          zh: '用户享受极速、低成本的匿名转账体验，但无法满足金融机构的反洗钱合规要求。一旦被用于非法活动，整个网络面临被交易所下架和各国政府封杀的系统性风险。',
+          en: 'Users enjoy lightning-fast, low-cost anonymous transfers, but the system cannot meet AML compliance, risking exchange delistings and government bans.'
+        },
+        example: {
+          zh: 'Monero（门罗币）——使用环签名和保密交易实现高度匿名性，交易效率较高，但缺乏可审计性，在许多国家的合规审查中面临重大障碍。',
+          en: 'Monero—uses ring signatures and confidential transactions for strong anonymity at decent speeds, but lacks auditability and faces severe regulatory obstacles in many countries.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'healthcare-trilemma',
+    name: {
+      zh: '医疗不可能三角',
+      en: 'Healthcare Trilemma'
+    },
+    category: 'politics',
+    tagline: {
+      zh: '全球各国医疗体系改革绕不开的终极政策困境',
+      en: 'The ultimate policy dilemma facing every nation\'s healthcare system'
+    },
+    introduction: {
+      zh: '在任何现代国家的医疗政策设计中，始终存在一个顽固的三角约束：医疗服务的优质性、覆盖的全面性（全民可及）和成本的低廉性不可同时兼得。任何一个国家的医疗体制改革，本质上都是在这三个角之间选择牺牲哪一个。',
+      en: 'In every modern nation\'s healthcare policy, there is a persistent trilemma: high quality, universal access, and low cost cannot be achieved simultaneously. Any healthcare reform is essentially a choice of which vertex to sacrifice.'
+    },
+    vertices: [
+      {
+        id: 'quality',
+        name: {
+          zh: '高质量医疗',
+          en: 'High Quality'
+        },
+        description: {
+          zh: '拥有世界顶级的医疗技术、高水平的专科医生、先进的诊疗设备以及良好的治疗效果和患者体验。',
+          en: 'Access to world-class medical technology, highly trained specialists, advanced diagnostic equipment, and excellent patient outcomes.'
+        },
+        details: {
+          zh: '医疗质量意味着最好的救治效果：更低的误诊率、更高的癌症五年生存率、更尖端的微创手术和最新的特效药物。但追求高精尖的医疗服务需要持续投入巨额研发资金、采购昂贵的设备（达芬奇手术机器人、PET-CT等）、并提供有竞争力的薪酬以吸引最优秀的医学人才留在临床一线而非流向私立机构。',
+          en: 'Quality means the best outcomes: lower misdiagnosis rates, higher survival rates, cutting-edge surgeries, and novel drugs. But achieving this demands massive R&D investment, expensive equipment (Da Vinci robots, PET-CT), and competitive salaries to retain top talent in clinical practice.'
+        },
+        colorHue: 210 // Medical Blue
+      },
+      {
+        id: 'access',
+        name: {
+          zh: '全民覆盖',
+          en: 'Universal Access'
+        },
+        description: {
+          zh: '确保每一位公民无论其收入水平、地理位置、年龄或就业状况，都能平等地获得必要的医疗服务。',
+          en: 'Ensuring every citizen can obtain necessary medical services regardless of income, location, age, or employment status.'
+        },
+        details: {
+          zh: '全民健康覆盖是世界卫生组织（WHO）倡导的核心目标。它代表着一个社会的文明底线——不会有人因为付不起医药费而在病痛中等死，或者因一次大病而全家陷入赤贫。但全覆盖意味着将全体国民都纳入保障网络，大幅扩大了受保人群基数，不可避免地会带来巨量的公共财政支出增长。偏远地区的基层医疗网络建设也是一笔天文数字。',
+          en: 'Universal Health Coverage (UHC) is WHO\'s core mission. It represents a civilization\'s baseline—no one dies from treatable illness due to cost. But covering every citizen massively expands the insured pool and public spending, with astronomical costs for rural infrastructure.'
+        },
+        colorHue: 130 // Public Green
+      },
+      {
+        id: 'low-cost',
+        name: {
+          zh: '低成本',
+          en: 'Low Cost'
+        },
+        description: {
+          zh: '将国家医疗总支出控制在可持续的财政范围内，降低个人自费比例，避免医疗通胀速度超过经济增长。',
+          en: 'Keeping national health expenditure within sustainable fiscal limits, reducing out-of-pocket costs, and preventing medical inflation from outpacing economic growth.'
+        },
+        details: {
+          zh: '医疗费用是全球各国政府的头号财政难题。控制了医疗成本，意味着能把更多的预算投入到教育、国防、基建等同样重要的领域，也能避免民众因病致贫。然而，控制成本意味着必须限制高价药品和耗材的采购、设定医生诊疗费用的上限、减少不必要的检查和住院天数。这些措施不可避免地会引起医疗从业者的强烈抵制，并可能以牺牲服务质量或就医可及性为代价。',
+          en: 'Healthcare spending is the #1 fiscal challenge for governments worldwide. Controlling costs frees budget for education, defense, and infrastructure while preventing medical poverty. But it means capping drug prices, limiting reimbursements, and restricting procedures—triggering pushback from providers and potentially lowering quality or access.'
+        },
+        colorHue: 40 // Cost Control Amber
+      }
+    ],
+    tradeOffs: [
+      {
+        selectedVertices: ['quality', 'access'],
+        sacrificedVertex: 'low-cost',
+        name: {
+          zh: '高质量 + 全民覆盖（高成本医疗模式）',
+          en: 'High Quality + Universal Access (High-Cost Model)'
+        },
+        description: {
+          zh: '追求顶级医疗服务惠及每一位公民，但代价是医疗开支的急剧膨胀，成为国家财政的沉重负担。',
+          en: 'Pursuing top-tier care for every citizen causes healthcare spending to balloon, weighing heavily on national finances.'
+        },
+        realWorldImpact: {
+          zh: '医疗技术世界领先，人均寿命长，但医疗支出占GDP比重极高，政府债务风险加大，企业社保负担沉重，间接削弱经济竞争力。',
+          en: 'World-class outcomes and long life expectancy, but healthcare consumes a huge share of GDP, increasing sovereign debt risk and employer burdens.'
+        },
+        example: {
+          zh: '美国医疗体系：拥有全球最顶尖的医疗技术和药企，Medicare 和 Medicaid 覆盖特定人群，但人均医疗支出高达 1.2 万美元以上，远超其他发达国家。',
+          en: 'The US healthcare system: world-class technology and pharmaceuticals with Medicare/Medicaid coverage, but per-capita spending exceeds $12,000—far above any other developed nation.'
+        }
+      },
+      {
+        selectedVertices: ['access', 'low-cost'],
+        sacrificedVertex: 'quality',
+        name: {
+          zh: '全民覆盖 + 低成本（普惠式公费医疗）',
+          en: 'Universal Access + Low Cost (Public Single-Payer System)'
+        },
+        description: {
+          zh: '通过强大的政府议价能力和严格的预算管控，将医疗开支压到极低水平并覆盖全民，但不得不忍受漫长的排队和有限的选择。',
+          en: 'Leveraging government bargaining power and strict budgets to cover everyone cheaply, at the cost of long waiting lists and limited choice.'
+        },
+        realWorldImpact: {
+          zh: '人人看得起病，财政可控，但非紧急手术排队时间可达数月甚至一年，尖端设备和创新药物的可及性严重受限，部分患者被迫跨境或自费寻求高端医疗。',
+          en: 'Everyone can afford care and budgets are sustainable. But non-urgent surgery wait times stretch months to a year, access to cutting-edge treatments is limited, and some patients go abroad for care.'
+        },
+        example: {
+          zh: '英国 NHS（国家医疗服务体系）：政府统一税收支付、全面覆盖，但等待名单常年高达数百万人，癌症等重症的及时救治面临严峻挑战。',
+          en: 'The UK\'s NHS: tax-funded and universal, but waiting lists historically exceed millions, with serious challenges in timely cancer treatment.'
+        }
+      },
+      {
+        selectedVertices: ['quality', 'low-cost'],
+        sacrificedVertex: 'access',
+        name: {
+          zh: '高质量 + 低成本（精英式私人医疗）',
+          en: 'High Quality + Low Cost (Elite Private Healthcare)'
+        },
+        description: {
+          zh: '通过市场化竞争和严格的费用控制实现优质且相对低价的医疗服务，但主要服务于具有支付能力的群体，未覆盖全民。',
+          en: 'Achieving quality care at competitive prices through market competition, but serving only those who can pay.'
+        },
+        realWorldImpact: {
+          zh: '中高收入人群能快速获得世界级水平的治疗，价格也相对合理，但低收入群体、老年人和慢性病患者被排除在外，面临极大的健康不平等问题。',
+          en: 'The wealthy enjoy world-class care at reasonable prices, but low-income groups, the elderly, and chronic patients face severe health inequality and exclusion.'
+        },
+        example: {
+          zh: '新加坡医疗体系：强调个人储蓄账户（Medisave）与市场竞争，兼顾医疗质量和成本控制，但低收入者仍面临较大的自费压力。',
+          en: 'Singapore\'s healthcare system: emphasizing personal Medisave accounts and market competition, balancing quality and cost, though low-income groups still face significant out-of-pocket pressure.'
+        }
+      }
+    ]
+  },
+  {
+    id: 'zooko-triangle',
+    name: {
+      zh: 'Zooko 三角——数字身份不可能三角',
+      en: 'Zooko\'s Triangle — Digital Identity Trilemma'
+    },
+    category: 'technology',
+    tagline: {
+      zh: '网络身份标识系统设计的基础性约束',
+      en: 'The foundational constraint in naming and identity system design'
+    },
+    introduction: {
+      zh: '由 Zcash 创始人 Zooko Wilcox-O\'Hearn 提出，指出在对等网络中的身份标识符（用户名、地址、域名）存在一个三重约束：一个标识符系统最多只能同时满足安全、人类可读和去中心化中的两个属性。这深刻影响了从 DNS 到区块链地址系统的设计演进。',
+      en: 'Proposed by Zcash founder Zooko Wilcox-O\'Hearn, it states that identifiers in peer-to-peer networks (usernames, addresses, domain names) can satisfy at most two of three properties: secure, human-meaningful, and decentralized.'
+    },
+    vertices: [
+      {
+        id: 'secure',
+        name: {
+          zh: '安全性',
+          en: 'Secure'
+        },
+        description: {
+          zh: '系统中的标识符具有全局唯一性，任何实体都无法伪造或冒用他人的身份，且系统能够抵抗女巫攻击和中间人攻击。',
+          en: 'Identifiers are globally unique and cannot be forged or impersonated, with the system resistant to Sybil and man-in-the-middle attacks.'
+        },
+        details: {
+          zh: '安全性是身份系统的生命线——你必须在密码学上确信你正在交互的对象就是它声称的对象。这要求标识符的注册和解析过程经得起密码学验证，且不存在任何中心化实体能够单方面篡改映射关系。然而，实现这种无需信任的安全性的最直接方法就是使用原始的、无意义的密码学公钥哈希，但这对于人类来说几乎无法记忆和使用。',
+          en: 'Security is the lifeline of identity—you must be cryptographically certain that the entity you interact with is who they claim to be. The most direct way to achieve trustless security is using raw cryptographic public key hashes, but these are nearly impossible for humans to remember and use.'
+        },
+        colorHue: 355 // Security Red
+      },
+      {
+        id: 'human-meaningful',
+        name: {
+          zh: '人类可读',
+          en: 'Human-Meaningful'
+        },
+        description: {
+          zh: '标识符是短小、有意义、可记忆的字符串（如 alice、mycompany、example.com），方便人类的日常交流和使用。',
+          en: 'Identifiers are short, meaningful, and memorable strings (like alice, mycompany, example.com) for everyday human use.'
+        },
+        details: {
+          zh: '人类可读性是将区块链和加密技术推向主流大众的关键润滑剂。没有人会每天使用一长串十六进制地址来点外卖或转账。像电子邮箱用户名、Twitter 账号或域名这样简短易记的标识符能够极大地降低用户的心理负担。然而，有意义的字符串天然是有价值的且有限（"好名字"总是稀缺资源），这引出了名字囤积、抢注和黑市交易的问题。',
+          en: 'Human readability is the key to mainstream adoption. No one uses long hex strings to order food or send payments. Short, memorable names like email usernames or domain names dramatically reduce user friction. However, meaningful strings are naturally scarce and valuable, inviting squatting and black-market trading.'
+        },
+        colorHue: 45 // Memorable Gold
+      },
+      {
+        id: 'decentralized',
+        name: {
+          zh: '去中心化',
+          en: 'Decentralized'
+        },
+        description: {
+          zh: '标识符的注册、解析和所有权转移不依赖任何单一的中心化权威机构或服务器，由分布式节点网络共同维护。',
+          en: 'Registration, resolution, and transfer of identifiers are not controlled by any central authority but maintained by a distributed network.'
+        },
+        details: {
+          zh: '去中心化意味着没有人能够单方面剥夺你的身份、审查你的域名或冻结你的账户。这是 Web3 和抵抗审查的基础。但去中心化的名字系统缺乏中央机构来仲裁争议（如商标纠纷、名字盗用），也容易因缺乏高效的争议解决机制而导致恶意抢注泛滥。同时，分布式的共识记账在效率和用户体验上通常劣于中心化的数据库查询。',
+          en: 'Decentralization means no single entity can revoke your identity or freeze your account—the foundation of Web3 and censorship resistance. But without a central authority to resolve disputes (trademark conflicts, name squatting), malicious pre-registration run rampant. Distributed consensus also lags behind centralized databases in query efficiency.'
+        },
+        colorHue: 270 // Decentralized Violet
+      }
+    ],
+    tradeOffs: [
+      {
+        selectedVertices: ['secure', 'human-meaningful'],
+        sacrificedVertex: 'decentralized',
+        name: {
+          zh: '安全 + 人类可读（中心化域名系统）',
+          en: 'Secure + Human-Meaningful (Centralized Naming)'
+        },
+        description: {
+          zh: '能够注册有意义的用户名并确保不会被冒用，但所有解析和所有权都由中心化权威机构控制。',
+          en: 'Users register meaningful names that are globally unique and unforgeable, but a central authority controls all resolution and ownership.'
+        },
+        realWorldImpact: {
+          zh: '域名系统稳定可靠、广泛普及，但政府或注册局可以随时没收域名、审查内容或修改 DNS 记录，去中心化精神完全丧失。',
+          en: 'Stable, reliable, and universally adopted—but governments and registries can seize domains, censor content, or alter DNS records at will.'
+        },
+        example: {
+          zh: '传统 DNS 系统（域名注册局 + CA 证书颁发机构）、ICANN 管理的 .com/.org 顶级域名系统、以及所有 Web2 平台的用户名体系（如 Twitter @handle、微信 ID）。',
+          en: 'Traditional DNS (registries + CA system), ICANN-managed TLDs (.com/.org), and all Web2 platform usernames (Twitter @handle, WeChat ID).'
+        }
+      },
+      {
+        selectedVertices: ['human-meaningful', 'decentralized'],
+        sacrificedVertex: 'secure',
+        name: {
+          zh: '人类可读 + 去中心化（自由命名系统）',
+          en: 'Human-Meaningful + Decentralized (Free Naming Systems)'
+        },
+        description: {
+          zh: '任何人都可以在无需许可的分布式网络中注册任意可读名字，但没有全局唯一性保障，冒名和抢注泛滥。',
+          en: 'Anyone can register any readable name in a permissionless distributed network, but without global uniqueness guarantees, impersonation and squatting run rampant.'
+        },
+        realWorldImpact: {
+          zh: '用户可以自由选择心仪的名字，但无法分辨哪个才是真正的目标实体。恶意用户批量抢注热门名字并高价倒卖，极大地降低了系统的可信度。',
+          en: 'Users enjoy free name choice but cannot distinguish genuine identities. Squatters mass-register popular names for resale, eroding system trust.'
+        },
+        example: {
+          zh: '以太坊 ENS 域名（早期抢注疯狂、名人大批被盗用）；Namecoin（早期去中心化 DNS，缺乏安全约束，域名冲突频发）。',
+          en: 'Ethereum ENS in early days (rampant name squatting, celebrity name theft); Namecoin (early decentralized DNS lacking security guarantees).'
+        }
+      },
+      {
+        selectedVertices: ['decentralized', 'secure'],
+        sacrificedVertex: 'human-meaningful',
+        name: {
+          zh: '去中心化 + 安全（密码学地址）',
+          en: 'Decentralized + Secure (Cryptographic Addresses)'
+        },
+        description: {
+          zh: '通过非对称密码学生成全球唯一、无需许可的地址，抗伪造和攻击能力极强，但地址本身是一串毫无语义的乱码。',
+          en: 'Globally unique, permissionless addresses via asymmetric cryptography offer extreme security against forgery and attacks, but are meaningless random strings.'
+        },
+        realWorldImpact: {
+          zh: '任何人都能即时生成安全的地址，无需任何第三方。但地址太长无法记忆，用户必须依赖地址簿、二维码或复制粘贴，一旦输错（如漏了一个字符）则资金永久丢失。',
+          en: 'Anyone can instantly generate a secure address with no third party. But addresses are too long to remember, requiring address books or QR codes—one mistyped character means permanent loss.'
+        },
+        example: {
+          zh: '比特币地址（1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa）、以太坊地址（0x...格式）、IPFS 内容哈希（CID）。',
+          en: 'Bitcoin addresses (1A1z...), Ethereum addresses (0x...), IPFS content hashes (CIDs).'
+        }
+      }
+    ]
+  },
+  {
+    id: 'social-media-trilemma',
+    name: {
+      zh: '社交媒体不可能三角',
+      en: 'Social Media Trilemma'
+    },
+    category: 'life',
+    tagline: {
+      zh: '每个社交平台都在内容生态的漩涡中博弈挣扎',
+      en: 'The agonizing balancing act every social platform faces'
+    },
+    introduction: {
+      zh: '在现代社交媒体的平台治理中，存在一个制约所有内容生态系统的三角困境：用户互动与增长、信息内容的真实性、以及社区氛围的安全健康。任何一个主流社交平台，都在这三个相互冲突的目标之间精疲力竭地进行着永无终点的动态平衡。',
+      en: 'In modern social media governance, a trilemma constrains all content ecosystems: user engagement and growth, content authenticity, and community safety. Every major platform exhaustively struggles with this dynamic, never-ending balancing act.'
+    },
+    vertices: [
+      {
+        id: 'engagement',
+        name: {
+          zh: '高互动与增长',
+          en: 'Engagement & Growth'
+        },
+        description: {
+          zh: '算法和产品设计高度优化，最大化用户的使用时长、日活/月活、内容消费频次、点赞转发以及病毒式传播。',
+          en: 'Algorithms and product design are optimized to maximize time spent, DAU/MAU, content consumption, likes, shares, and viral spread.'
+        },
+        details: {
+          zh: '互动是社交媒体的生命血液和商业模式的基石。更高的互动意味着更多的广告曝光、更精确的用户画像和更强劲的股价表现。为了最大化互动，推荐算法天然倾向于推送最能激发强烈情绪（愤怒、恐惧、猎奇、争议）的内容，因为这些内容最容易获得点击和转发。然而，这种算法机制恰好也是虚假信息、极端言论和情绪化内容获得最大传播动力的温床。',
+          en: 'Engagement is the lifeblood and business model of social media. More engagement means more ad impressions and higher stock prices. Algorithms naturally amplify content that triggers strong emotions (anger, fear, outrage), as it drives the most clicks and shares. However, this is precisely the mechanism that supercharges misinformation and radical content.'
+        },
+        colorHue: 340 // Virality Pink
+      },
+      {
+        id: 'authenticity',
+        name: {
+          zh: '信息真实性',
+          en: 'Content Authenticity'
+        },
+        description: {
+          zh: '平台上传播的信息经过核实，最大限度地减少虚假新闻、误导性信息、深度伪造和阴谋论的扩散。',
+          en: 'Information on the platform is verified to minimize fake news, disinformation, deepfakes, and conspiracy theories.'
+        },
+        details: {
+          zh: '真实性是社交媒体作为公共舆论场的合法性基石。当平台成为谎言和谣言的放大器，它不仅侵蚀了社会信任，还可能酿成现实世界的暴力冲突和公共卫生灾难（例如疫苗谣言导致接种率下降）。然而，建立事实核查机制和标注误导信息需要投入大量的专业人工审核团队或第三方事实核查机构，成本极高。而且，事实核查天然存在用户抵触情绪——没有人喜欢被平台标记为"说谎者"。',
+          en: 'Authenticity is the legitimacy foundation of social platforms as public forums. When platforms amplify lies, they erode social trust and can trigger real-world harms (vaccine misinformation). But building fact-checking systems requires massive human review teams and third-party agencies. Fact-checks also provoke user backlash—nobody likes being labeled a liar.'
+        },
+        colorHue: 220 // Truth Blue
+      },
+      {
+        id: 'safety',
+        name: {
+          zh: '社区安全',
+          en: 'Community Safety'
+        },
+        description: {
+          zh: '平台能够有效打击网络霸凌、仇恨言论、骚扰、极端主义和剥削性内容，营造健康包容的讨论环境。',
+          en: 'The platform effectively combats cyberbullying, hate speech, harassment, extremism, and exploitative content to foster a healthy environment.'
+        },
+        details: {
+          zh: '社区安全决定了平台的长期社会可接受性和用户留存。一个充满仇恨和骚扰的平台将赶走主流用户和品牌广告商。然而，安全的另一个侧面是"过度审核"——如果平台为了安全而采取极端严格的自动过滤，又会大规模误伤正常讨论，引发"言论自由"和"审查制度"的巨大争议。垃圾信息的对抗也是一场永不停歇的军备竞赛，需要持续投入巨额的 AI 模型训练和人工审核成本。',
+          en: 'Safety determines long-term social acceptability and user retention. A platform rife with hate drives away mainstream users and advertisers. But aggressive automated moderation inevitably catches legitimate speech, triggering censorship controversies. Fighting spam and abuse is a never-ending arms race demanding enormous AI and human moderation investment.'
+        },
+        colorHue: 100 // Safety Green
+      }
+    ],
+    tradeOffs: [
+      {
+        selectedVertices: ['engagement', 'authenticity'],
+        sacrificedVertex: 'safety',
+        name: {
+          zh: '高互动 + 真实性（激烈的公开广场）',
+          en: 'High Engagement + Authenticity (The Raucous Public Square)'
+        },
+        description: {
+          zh: '鼓励用户自由表达和辩论事实，不加以温和的社区过滤，但激烈的言辞交锋和公开对质极易演变为网络暴力。',
+          en: 'Encourages free expression and fact-based debate without soft moderation, but heated confrontations easily escalate into online harassment.'
+        },
+        realWorldImpact: {
+          zh: '平台成为"观点自由市场"，辟谣和辩论非常活跃。但针对公众人物的恶意人身攻击、死亡威胁和网络暴力极为猖獗，平台沦为人肉搜索和网络审判的战场。',
+          en: 'The platform becomes a vibrant marketplace of ideas with active fact-checking debate. But harassment, doxxing, and mob justice run rampant, making it a toxic battlefield for public figures.'
+        },
+        example: {
+          zh: 'Twitter（X）在马斯克接管后推行"言论自由优先"路线：社区笔记（Community Notes）对抗虚假信息，但仇恨言论、骚扰和反犹主义内容急剧上升，大量广告商出走。',
+          en: 'Twitter/X under Musk\'s "free speech absolutism": Community Notes counter misinformation, but hate speech, harassment, and antisemitic content surged, driving away major advertisers.'
+        }
+      },
+      {
+        selectedVertices: ['authenticity', 'safety'],
+        sacrificedVertex: 'engagement',
+        name: {
+          zh: '真实性 + 安全性（谨慎的高墙花园）',
+          en: 'Authenticity + Safety (The Walled Garden)'
+        },
+        description: {
+          zh: '平台投入大量人力物力进行内容审核和事实核查，社区文明且理性，但内容变得保守沉闷，自发的讨论热度大幅下降。',
+          en: 'Heavy investment in content moderation and fact-checking creates a civil, rational community—but the platform feels sterile and spontaneous discussion declines.'
+        },
+        realWorldImpact: {
+          zh: '虚假信息和仇恨言论得到有效抑制，用户体验文明友好。但用户抱怨"过度敏感"，专业但无趣的内容无法获得推荐流量，创作者失去表达热情转向其他平台。',
+          en: 'Misinformation and hate speech are effectively contained. User experience is civil. But complaints of over-moderation grow; niche creative or edgy content is suppressed, driving creators to rivals.'
+        },
+        example: {
+          zh: 'Pinterest 和 LinkedIn：内容经过高度审核，社区文明度极高，虚假信息极少，但完全不具备病毒式传播能力和大众娱乐性，用户互动频次远低于 TikTok。',
+          en: 'Pinterest and LinkedIn: highly moderated, civil communities with minimal misinformation. But they lack viral dynamics and mass entertainment appeal, with far lower engagement than TikTok.'
+        }
+      },
+      {
+        selectedVertices: ['engagement', 'safety'],
+        sacrificedVertex: 'authenticity',
+        name: {
+          zh: '高互动 + 安全性（温和的过滤气泡）',
+          en: 'Engagement + Safety (The Cozy Filter Bubble)'
+        },
+        description: {
+          zh: '算法推荐令人愉快、内容安全、无攻击性的热门内容，创造舒适的用户体验，但以牺牲信息多样性和真实性为代价。',
+          en: 'Algorithms recommend pleasant, safe, inoffensive trending content for a comfortable experience—at the cost of information diversity and truth.'
+        },
+        realWorldImpact: {
+          zh: '用户在平台上感到愉快、放松、安全，社区氛围友善。但推荐系统将用户困在同质化的"信息茧房"和"过滤气泡"中，算法为了"温和"而回避争议性真相，大量虚假信息和谣言以伪科学、养生秘方等形式在私密群组中交叉传播而不被干预。',
+          en: 'Users feel happy and safe, enjoying a friendly atmosphere. But recommendation algorithms trap them in homogeneous filter bubbles, sacrificing exposure to diverse viewpoints. Misinformation spreads in private groups under the radar.'
+        },
+        example: {
+          zh: '微信朋友圈和微信群的"私域"流量模式：封闭的安全空间内互动活跃，但大量中老年健康谣言、伪科学文章和阴谋论在群组内不受干预地疯传。',
+          en: 'WeChat Moments and group chats: active engagement in safe, closed spaces, but health rumors, pseudoscience, and conspiracy theories spread unchecked among older demographics.'
         }
       }
     ]
