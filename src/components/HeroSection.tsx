@@ -56,16 +56,29 @@ export const HeroSection: FC = () => {
         {t('heroTitle')}
       </h1>
 
-      <p style={{
-        fontSize: 'clamp(15px, 2vw, 18px)',
-        color: 'var(--text-secondary)',
-        maxWidth: '700px',
-        margin: '0 auto 32px auto',
-        lineHeight: 1.7
+      <blockquote style={{
+        fontSize: 'clamp(16px, 2.2vw, 20px)',
+        fontStyle: 'italic',
+        color: '#e2e8f0',
+        maxWidth: '750px',
+        margin: '0 auto 16px auto',
+        fontWeight: 500,
+        lineHeight: 1.6,
+        textWrap: 'balance'
       }}>
-        {t('heroSubtitle1')} <br />
-        {t('heroSubtitle2')}
-        <span style={{ color: '#a5b4fc', fontWeight: 600 }}>{t('heroSubtitle3')}</span>
+        {t('heroSubtitle1')}
+      </blockquote>
+
+      <p style={{
+        fontSize: 'clamp(14px, 1.8vw, 16px)',
+        color: 'var(--text-secondary)',
+        maxWidth: '720px',
+        margin: '0 auto 32px auto',
+        lineHeight: 1.7,
+        textWrap: 'balance'
+      }}>
+        {t('heroSubtitle2')}{' '}
+        <span style={{ color: '#a5b4fc', fontWeight: 600 }}>{t('heroSubtitle3')}</span>{' '}
         {t('heroSubtitle4')}
       </p>
 

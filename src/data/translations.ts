@@ -44,10 +44,10 @@ export const uiTranslations = {
     aboutCard1Desc: "系统中每一个角都有其成立的前提和条件。不可能三角并不是一种设计缺陷，而是一种深刻的宇宙自然守恒定律。",
     aboutCard2Title: "决策权衡思辨",
     aboutCard2Desc: "通过切换顶点的制衡组合，您可以直观体感各种博弈状态的此消彼长，从而在复杂的现实（金融、政治、生活）中训练清醒冷静的权衡思维。",
-    aboutCard3Title: "边缘云分发",
-    aboutCard3Desc: "依托 Cloudflare Pages 全球智能分发，网站前端享有极低的静态载入时延与零计算耗费的绝对安全性。",
+    aboutCard3Title: "系统化决策视野",
+    aboutCard3Desc: "从宏观的金融三元悖论到日常的睡眠-工作-社交，掌握不可能三角能帮您用全新的系统化视角，看透纷繁世事背后的底层博弈规则。",
     
-    footerCopyright: "© 2026 Project Trilemma • 不可能三角物理馆 • Powered by React, Vite & Cloudflare Edge Pages",
+    footerCopyright: "© 2026 Project Trilemma • 不可能三角物理馆 • 探索法则与制衡的奥秘",
     footerQuote: "“To restrict is to create. 限制，即是创造。”",
     
     categoryEconomics: "📈 经济与金融",
@@ -100,10 +100,10 @@ export const uiTranslations = {
     aboutCard1Desc: "Each vertex in the system has its prerequisites. The trilemma is not a design flaw but a profound natural law of conservation.",
     aboutCard2Title: "Decision Trade-offs",
     aboutCard2Desc: "By toggling combinations, you can visually feel the ebb and flow of balances, training cold, clear-headed trade-off thinking in complex reality.",
-    aboutCard3Title: "Edge Cloud Distribution",
-    aboutCard3Desc: "Powered by Cloudflare Pages global distribution, the front-end enjoys low loading latency and zero-compute absolute security.",
+    aboutCard3Title: "Systemic Perspective",
+    aboutCard3Desc: "From macroeconomic trilemmas to the balance of sleep, work, and social life, mastering trilemmas empowers you to analyze complex scenarios with systematic clarity.",
     
-    footerCopyright: "© 2026 Project Trilemma • Impossible Trilemma Museum • Powered by React, Vite & Cloudflare Edge Pages",
+    footerCopyright: "© 2026 Project Trilemma • Impossible Trilemma Museum • Exploring the Art of Balance",
     footerQuote: "\"To restrict is to create.\"",
     
     categoryEconomics: "📈 Economics & Finance",

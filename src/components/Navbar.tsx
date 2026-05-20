@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { HelpCircle, Share2, Layers, Globe } from 'lucide-react';
+import { HelpCircle, Share2, Globe } from 'lucide-react';
 import { useLanguage } from '../context/LanguageContext';
 
 export const Navbar: FC = () => {
@@ -10,7 +10,13 @@ export const Navbar: FC = () => {
       {/* Logo Section */}
       <div className="nav-logo-container">
         <div className="nav-logo-badge">
-          <Layers size={20} color="#ffffff" style={{ transform: 'rotate(45deg)' }} />
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ transform: 'translateY(-0.5px)' }}>
+            <polygon points="12 2 22 19 2 19" />
+            <line x1="12" y1="13" x2="12" y2="2" />
+            <line x1="12" y1="13" x2="22" y2="19" />
+            <line x1="12" y1="13" x2="2" y2="19" />
+            <circle cx="12" cy="13" r="1.8" fill="#ffffff" stroke="none" />
+          </svg>
         </div>
         <div>
           <h1 className="gradient-text neon-glow-text nav-logo-title">

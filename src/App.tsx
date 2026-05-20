@@ -5,7 +5,7 @@ import { CategoryFilter } from './components/CategoryFilter';
 import type { CategoryType } from './components/CategoryFilter';
 import { TrilemmaCard } from './components/TrilemmaCard';
 import { trilemmas } from './data/trilemmas';
-import { BookOpen, Layers, ShieldCheck, Cpu } from 'lucide-react';
+import { BookOpen, Layers, ShieldCheck, Compass } from 'lucide-react';
 import { useLanguage } from './context/LanguageContext';
 
 export default function App() {
@@ -129,7 +129,7 @@ export default function App() {
               padding: '16px'
             }}>
               <h4 style={{ color: '#ffffff', fontSize: '15px', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-                <Cpu size={16} color="#fbbf24" />
+                <Compass size={16} color="#fbbf24" />
                 {t('aboutCard3Title')}
               </h4>
               <p style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
