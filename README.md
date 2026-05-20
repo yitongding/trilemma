@@ -1,73 +1,33 @@
-# React + TypeScript + Vite
+# Project Trilemma · 不可能三角物理馆
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> 探索各个领域的规则约束与不可能三角
 
-Currently, two official plugins are available:
+交互式 web 应用，展示政治、经济、科技与生活中无处不在的 **不可能三角 (Trilemma)** 悖论。通过点击三角形顶点切换制衡组合，直观理解"三选其二、牺牲其一"的系统守恒法则。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 功能
 
-## React Compiler
+- 四个分类：金融与经济、政治与全球化、硬核科技、趣味与生活
+- 交互式三角可视化：点击顶点切换政策配对，实时显示权衡与代价
+- 中英文双语（i18n）
+- 响应式设计，玻璃拟态 UI
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 技术栈
 
-## Expanding the ESLint configuration
+- **React 19** + **TypeScript 6.0** + **Vite 8**
+- 自定义 `LanguageContext` 实现 i18n（zh / en）
+- 数据驱动 — 所有三角内容定义在 `src/data/trilemmas.ts`
+- 样式：CSS 变量 + `.glass-panel` 玻璃效果
+- 图标：`lucide-react`
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 本地开发
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev      # 启动 Vite 开发服务器
+npm run build    # tsc -b && vite build（类型检查 + 构建）
+npm run lint     # ESLint
+npm run preview  # 预览构建产物
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 部署
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+部署至 Cloudflare Pages（`functions/api/` 为 serverless functions，`public/_redirects` 处理 SPA 回退）。
