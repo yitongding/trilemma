@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 export type CategoryType = 'all' | 'economics' | 'politics' | 'technology' | 'life';
 
@@ -8,12 +9,14 @@ interface CategoryFilterProps {
 }
 
 export const CategoryFilter: React.FC<CategoryFilterProps> = ({ currentCategory, onChange }) => {
+  const { t } = useLanguage();
+
   const categories: { key: CategoryType; label: string; icon: string }[] = [
-    { key: 'all', label: '全部三角', icon: '🌌' },
-    { key: 'economics', label: '金融与经济', icon: '📈' },
-    { key: 'politics', label: '政治与全球化', icon: '⚖️' },
-    { key: 'technology', label: '硬核科技', icon: '🛡️' },
-    { key: 'life', label: '趣味与生活', icon: '☕' }
+    { key: 'all', label: t('catAll'), icon: '🌌' },
+    { key: 'economics', label: t('catEconomics'), icon: '📈' },
+    { key: 'politics', label: t('catPolitics'), icon: '⚖️' },
+    { key: 'technology', label: t('catTechnology'), icon: '🛡️' },
+    { key: 'life', label: t('catLife'), icon: '☕' }
   ];
 
   return (

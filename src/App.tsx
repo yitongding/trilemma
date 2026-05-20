@@ -6,12 +6,14 @@ import type { CategoryType } from './components/CategoryFilter';
 import { TrilemmaCard } from './components/TrilemmaCard';
 import { trilemmas } from './data/trilemmas';
 import { BookOpen, Layers, ShieldCheck, Cpu } from 'lucide-react';
+import { useLanguage } from './context/LanguageContext';
 
 export default function App() {
   const [category, setCategory] = useState<CategoryType>('all');
+  const { t } = useLanguage();
 
   const filteredTrilemmas = trilemmas.filter(
-    (t) => category === 'all' || t.category === category
+    (item) => category === 'all' || item.category === category
   );
 
   return (
@@ -77,14 +79,12 @@ export default function App() {
               fontWeight: 700,
               color: '#ffffff'
             }}>
-              关于【不可能三角】理论
+              {t('aboutTitle')}
             </h3>
           </div>
 
           <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '24px' }}>
-            不可能三角（Trilemma）是博弈论与决策学中的一种重要模型。它表明，在一个由三个极具吸引力的要素构成的系统中，规则的物理制约决定了<strong>你必须且只能选择其中两个要素</strong>。
-            企图将三个角全部占有的决策者（如追求“既要又要还要”的完美方案）往往会迎来系统崩溃或无效率的惨重恶果。
-            在当今互联的世界中，理解不可能三角不仅能帮助我们分析宏观的全球经济形势，更能在编写分布式代码、管理研发项目、乃至在平衡睡眠、工作和生活等微观事务时，提供清醒明智的决策思维模式。
+            {t('aboutParagraph')}
           </p>
 
           <div style={{ 
@@ -100,10 +100,10 @@ export default function App() {
             }}>
               <h4 style={{ color: '#ffffff', fontSize: '15px', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                 <Layers size={16} color="#818cf8" />
-                规则与限制
+                {t('aboutCard1Title')}
               </h4>
               <p style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
-                系统中每一个角都有其成立的前提和条件。不可能三角并不是一种设计缺陷，而是一种深刻的宇宙自然守恒定律。
+                {t('aboutCard1Desc')}
               </p>
             </div>
 
@@ -115,10 +115,10 @@ export default function App() {
             }}>
               <h4 style={{ color: '#ffffff', fontSize: '15px', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                 <ShieldCheck size={16} color="#10b981" />
-                决策权衡思辨
+                {t('aboutCard2Title')}
               </h4>
               <p style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
-                通过切换顶点的制衡组合，您可以直观体感各种博弈状态的此消彼长，从而在复杂的现实（金融、政治、生活）中训练清醒冷静的权衡思维。
+                {t('aboutCard2Desc')}
               </p>
             </div>
 
@@ -130,10 +130,10 @@ export default function App() {
             }}>
               <h4 style={{ color: '#ffffff', fontSize: '15px', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
                 <Cpu size={16} color="#fbbf24" />
-                边缘云分发
+                {t('aboutCard3Title')}
               </h4>
               <p style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
-                依托 Cloudflare Pages 全球智能分发，网站前端享有极低的静态载入时延与零计算耗费的绝对安全性。
+                {t('aboutCard3Desc')}
               </p>
             </div>
           </div>
@@ -149,10 +149,10 @@ export default function App() {
         marginTop: '60px'
       }}>
         <p style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-          © 2026 Project Trilemma • 不可能三角物理馆 • Powered by React, Vite & Cloudflare Edge Pages
+          {t('footerCopyright')}
         </p>
         <p style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: '4px' }}>
-          “To restrict is to create. 限制，即是创造。”
+          {t('footerQuote')}
         </p>
       </footer>
     </div>

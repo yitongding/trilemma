@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface Env {
   // If you bind databases in Cloudflare dashboard, they appear here:
   // DB: D1Database;
@@ -6,7 +7,7 @@ interface Env {
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
   try {
-    const requestBody: any = await context.request.json();
+    const requestBody = (await context.request.json()) as Record<string, unknown>;
     const { trilemmaId, selectedPair, rating, comment } = requestBody;
 
     if (!trilemmaId || !selectedPair) {
@@ -42,9 +43,10 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
         }
       }
     );
-  } catch (err: any) {
+  } catch (err: unknown) {
+    const errorMessage = err instanceof Error ? err.message : 'Internal Server Error';
     return new Response(
-      JSON.stringify({ success: false, error: err.message || 'Internal Server Error' }),
+      JSON.stringify({ success: false, error: errorMessage }),
       { status: 500, headers: { 'Content-Type': 'application/json' } }
     );
   }

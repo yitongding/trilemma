@@ -1,7 +1,10 @@
 import type { FC } from 'react';
 import { Sparkles, ShieldAlert } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 
 export const HeroSection: FC = () => {
+  const { t } = useLanguage();
+
   return (
     <div style={{
       textAlign: 'center',
@@ -39,7 +42,7 @@ export const HeroSection: FC = () => {
         boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.05)'
       }}>
         <Sparkles size={12} color="#818cf8" />
-        探索各个领域的制衡艺术与物理定律
+        {t('heroBadge')}
       </div>
 
       <h1 className="gradient-text neon-glow-text" style={{
@@ -50,7 +53,7 @@ export const HeroSection: FC = () => {
         letterSpacing: '-1px',
         marginBottom: '20px'
       }}>
-        规则的边界：不可能三角
+        {t('heroTitle')}
       </h1>
 
       <p style={{
@@ -60,10 +63,10 @@ export const HeroSection: FC = () => {
         margin: '0 auto 32px auto',
         lineHeight: 1.7
       }}>
-        “你无法拥有一切，必须做出抉择。” <br />
-        在政治、经济、计算机与个人生活中，无数神奇的
-        <span style={{ color: '#a5b4fc', fontWeight: 600 }}>【不可能三角】</span>
-        无声地规定了人类行动的极限。点击下方的三角形顶点，探索抉择背后的真理与沉重代价。
+        {t('heroSubtitle1')} <br />
+        {t('heroSubtitle2')}
+        <span style={{ color: '#a5b4fc', fontWeight: 600 }}>{t('heroSubtitle3')}</span>
+        {t('heroSubtitle4')}
       </p>
 
       <div style={{
@@ -78,15 +81,15 @@ export const HeroSection: FC = () => {
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#10b981' }} />
-          三选其二 (Pick Two)
+          {t('heroPickTwo')}
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <span style={{ display: 'inline-block', width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#ef4444' }} />
-          牺牲其一 (Sacrifice One)
+          {t('heroSacrificeOne')}
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
           <ShieldAlert size={14} color="#f59e0b" />
-          系统守恒 (Conservation)
+          {t('heroConservation')}
         </div>
       </div>
     </div>
